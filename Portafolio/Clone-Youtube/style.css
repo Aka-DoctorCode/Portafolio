@@ -1,0 +1,218 @@
+body{
+    background-color: rgb(15, 15, 15 );
+    color: white;
+    margin-top: 0.3cm;
+    margin-right: 0.8cm;
+    display: grid;
+    grid-template-columns: 6% 94%;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 10px;
+}
+
+aside div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside div img{
+    width: 25px;
+}
+
+.TextoAsideButton{
+    color: white;
+    font-size:small;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+nav a div img{
+    height: 35px;
+}
+
+#buscador{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#buscador div{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+#buscador div input{
+    background-color: rgb(15, 15, 15);
+    width: 500px;
+    height: 29px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-right: 1px;
+    border-left: 0px;
+    border-style: solid;
+    border-color:rgb(48, 48, 48);
+    font-style: normal;
+    font-family: Arial;
+    color: white;
+}
+
+#lupa{
+    background-color: rgb(15, 15, 15 );
+    border-top: 2px;
+    border-bottom: 2px;
+    border-right: 2px;
+    border-left: 1px;
+    border-style: solid;
+    border-color:rgb(48, 48, 48);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+#lupa2{
+    background-color: rgb(15, 15, 15 );
+    border-top: 2px;
+    border-bottom: 2px;
+    border-right: 0px;
+    border-left: 2px;
+    border-style: solid;
+    border-color:rgb(48, 48, 48);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+#lupa img{
+    width: 100%;
+}
+
+#microfono{
+    background-color: rgb(33, 33, 33);
+    border: 5px;
+    border-style: solid;
+    border-color:rgb(33, 33, 33);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+#microfono img{
+    width: 100%;
+}
+
+#accionesDeUsuario{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#accionesDeUsuario img{
+    width: 35px;
+    align-items: bottom;
+}
+
+#BarraDeRecomendados{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.BotonRecomendados{
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    border: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid;
+    border-color: rgb(39, 39, 39);
+    border-radius: 10px;
+}
+
+#GridDeVideos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 
+    1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.video{
+    display: flex;
+    flex-direction: column;
+}
+
+.inferiorvideo{
+    display: flex;
+    gap: 10px;
+}
+
+.infoVideo1{
+    display: flex;
+    flex-direction: column;
+}
+
+#GridDeVideos div a img{
+    width: 270px;
+    border: 0px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.infoVideo1 img{
+    border: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 45px
+}
+
+h3{
+    font-family: Arial;
+    font-size: small;
+    color: white;
+}
+
+
+
+.infoVideo2{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
+    font-size: small;
+    gap: 0px;
+    margin-top: -10px;
+}
+
+.infoVideo2 h3{
+    margin-bottom: -5px;
+    color: rgb(239, 239, 239 )
+}
+
+.infoVideo2 p{
+    margin-bottom: -10px;
+    color: rgb(139,139, 139);
+}
