@@ -1,0 +1,48 @@
+.Main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.Alo {
+  position: absolute;
+  z-index: 0;
+  animation: rotate 10s infinite linear;
+  height: 100%;
+}
+.Alo2 {
+  position: absolute;
+  z-index: 0;
+  animation: rotate 1s infinite linear;
+  height: 100%;
+}
+.Centro{
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    background-color: #BFDBFE
+}
+.Centro:hover{
+    transform: translateY(-6px) translateX(-4px);
+    box-shadow: 4px 7px black;
+    border-color: black;
+}
+.Centro:active {
+    transform: translateY(4px) translateX(2px);
+    box-shadow: 1px 2px 0 0 black;;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
