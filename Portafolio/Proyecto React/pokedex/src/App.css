@@ -42,11 +42,16 @@
     font-size: x-large;
     font-weight: bolder;
     font-family: system-ui;
+    animation: cargar2 2s infinite linear;
+    
 }
+  #Loading{
+    animation: cargar 1s infinite;
+    font-size: x-large;
+  }
 .Centro:hover{
   transform: translateY(-5px) translateX(-3px);
   background-color: rgb(0, 105, 0);
-  animation: cargar2 2s infinite;
 }
 @keyframes cargar2 {
   0%{
@@ -59,21 +64,6 @@
     background-color: rgb(105, 0, 0);
   }
 }
-.Centro:active {
-    transform: translateY(4px) translateX(2px);
-    box-shadow: 1px 2px 0 0 black;
-  }
-  @keyframes cargar {
-    0%{
-      color: white;
-    }
-    50%{
-      color: black;
-    }
-    100%{
-      color: white
-    }
-  }
 .setCarga{
   font-size: 6rem;
   animation: cargar 1s infinite linear;
