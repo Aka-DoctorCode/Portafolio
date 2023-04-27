@@ -1,0 +1,11 @@
+#boton{background: #168106; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; ;}
+#boton:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
+
+#botonPrevious{background: #168106; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-left: 10px;}
+#botonPrevious:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
+
+#botonNext{background: #168106; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-right: 10px;}
+#botonNext:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
+
+#botonClose{background: #168106; width: 20vw; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-right: 10px;}
+#botonClose:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}

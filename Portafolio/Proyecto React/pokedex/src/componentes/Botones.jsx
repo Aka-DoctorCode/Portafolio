@@ -1,27 +1,28 @@
 import { NavLink } from "react-router-dom";
 
 const Botones = () => {
-
-    const Estilos = {
-        Main: 'flex justify-evenly content-end h-1/5 my-12',
-        Button: 'relative w-full h-full overflow-hidden bg-[#1b6102] rounded-lg border-8 border-[#2da202] border-double my-1 font-[system-ui] font-semibold text-5xl text-white ',
+    const estilos = {
+        Boton: "w-[100wv] h-8 border-2 border-black",
     }
-
-    return ( 
-        <div className={Estilos.Main}>
-            <button className={Estilos.Button}>
-            <NavLink to="/">List View</NavLink>
-            </button>
-            <button className={Estilos.Button}>
-                <NavLink to="/">Details</NavLink>
-            </button>
-            <button className={Estilos.Button}>
-            <NavLink to="/">Search</NavLink>
-            </button>
-            <button className={Estilos.Button}>
-            <NavLink to="/">Close</NavLink>
-            </button>
-        </div>
+    return (
+        <main 
+        // className="w-full flex h-16 mt-2"
+        >
+            <div className="w-full flex justify-around ">
+                <button className={estilos.Boton}>
+                <NavLink to="Lista">List View</NavLink>
+                </button>
+                <button className={estilos.Boton}>
+                    <NavLink to="Detalle">Details</NavLink>
+                </button>
+                <button className={estilos.Boton}>
+                <NavLink to="Busqueda">Search</NavLink>
+                </button>
+                <button className={estilos.Boton}>
+                <NavLink to="/">Close</NavLink>
+                </button>
+            </div>
+        </main>
     );
 }
 
