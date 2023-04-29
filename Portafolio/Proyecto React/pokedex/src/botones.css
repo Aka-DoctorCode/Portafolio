@@ -9,3 +9,72 @@
 
 #botonClose{background: #168106; width: 20vw; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-right: 10px;}
 #botonClose:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
+
+.Sprite:hover{
+    animation: walk 10s;
+}
+@keyframes walk {
+    0% {
+        transform: translateX(0px);
+    }
+    20%{
+        transform: translateX(-100px);
+    }
+    22% {
+        transform: scaleX(-1) translateX(100px);
+    }
+    40%{
+        transform: scaleX(-1) translateX(-100px);
+    }
+    42%{
+        transform:translateX(100px);
+    }
+    60%{
+        transform: translateX(0px)
+    }
+    65%{
+        transform: scalex(-1);
+    }
+    68%{
+        transform: scalex(1);
+    }
+    71%{
+        transform: scalex(-1);
+    }
+    73%{
+        transform: scalex(-1) translateX(-105px);
+    }
+    73%{
+        transform: scalex(-1) translateX(-105px) rotate(-120deg);
+    }
+    75%{
+        transform: scalex(-1) translateX(-105px) rotate(-120deg);
+    }
+    76%{
+        transform: scalex(-1) translateX(-105px) rotate(-120deg);
+    }
+    77%{
+        transform: scalex(-1) translateX(-105px) rotate(-60deg);
+    }
+    80%{
+        transform: scalex(-1) translateX(-105px);
+    }
+    80%{
+        transform: scalex(-1);
+    }
+    90%{
+        transform: scalex(-1);
+    }
+    92%{
+        transform: translateY(-15px)
+    }
+    94%{
+        transform: translateY(0px)
+    }
+    96%{
+        transform: translateY(-15px)
+    } 
+    100% {
+        transform: translateY(0px)
+    }
+}

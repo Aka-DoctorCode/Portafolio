@@ -9,13 +9,25 @@
 .Alo {
   position: absolute;
   z-index: 0;
+  width: 100vw;
+  max-width: 250%;
 }
 .Alo2 {
   position: absolute;
   z-index: 0;
   animation: rotate 9.8s cubic-bezier(1, 0.3, 0.5, 1);
-  height: 100%;
+  width: 100vw;
+  max-width: 250%;
 }
+@media only screen and (max-width: 600px) {
+  .Alo{
+    width: 250vw;
+  }
+  .Alo2 {
+    width: 250vw;
+  }
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

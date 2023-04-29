@@ -1,17 +1,19 @@
 import axios from "axios";
+import { Alert } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import "../TypeColor.css"
-import "../botones.css"
+
 
 const ListaPokeDex = () => {
     const [pokemon, setPokemon] = useState([]);
     const [nombres, setNombres] = useState([]);
+    const [rangoAlto, setRangoAlto] = useState(101)
+    const rangoBajo = rangoAlto - 101;
 
     async function obtenerDatos() {
         try {
             const res = await axios.get(
-            "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=183"
+            `https://pokeapi.co/api/v2/pokemon/?offset=${rangoBajo}&limit=${rangoAlto}`
             );
         setPokemon(res.data.results);
         } catch (err) {
@@ -41,72 +43,73 @@ const ListaPokeDex = () => {
 
     const estilos = {
         body: "grid items-start justify-center",
-        header: "flex justify-between fixed w-full",
-        main: "w-[99%] justify-self-center p-1 bg-[#b13241e6] z-10",
-        Grid: "grid grid-cols-3 justify-stretch m-1",
-        nombre: "flex h-full text-left items-center mx-4",
-        tipos: "flex flex-col my-2",
-        botonesCambioPagina: "w-8 h-screen",
-        componentes: "w-[93vw] my-1 flex z-10",
-        botonesComponentes: "w-full h-8 mx-2",
+        header: "flex justify-between fixed w-full ",
+        botonesCambioPagina: "w-8 h-screen mt-12",
+        main: "w-[85vw] justify-self-center mt-12 bg-[#b13241e6] z-10 md:w-[92vw]",
+        Grid: "grid",
+        nombre: "flex h-full text-left items-center mx-4 w-[15%]",
+        tipos: "flex flex-col my-2 w-8% md:w-[15%]",
     }
 
     return (
         <body className={estilos.body}>
-            <header className={estilos.header}>
-                <button id="botonPrevious" className={estilos.botonesCambioPagina}>
-                    <p className="rotate-[-90deg]">PREVIOUS</p>
-                </button>
-                <button id="botonNext" className={estilos.botonesCambioPagina}>
-                    <p className="rotate-[90deg]">NEXT</p>
-                </button>
-            </header>
-            <div className={estilos.componentes}>
-                <button id="boton" className={estilos.botonesComponentes}>List View</button>
-                <button id="boton" className={estilos.botonesComponentes}>
-                    <NavLink to="Detalle">Details</NavLink>
-                </button>
-                <button id="boton" className={estilos.botonesComponentes}>
-                    <NavLink to="Busqueda">Search</NavLink>
-                </button>
-                <button id="botonClose" className={estilos.botonesComponentes}>
-                    <NavLink to="/">Close</NavLink>
-                </button>
-            </div>
             <main className={estilos.main}>
                 <div className={estilos.Grid}>
                 {/* función de mapeo del grid */}
-                {nombres.slice(0, 183).map((element) => (
-                    <div id={`${element.types[0].type.name}`} key={element.id}>
+                {nombres.slice(0, 101).map((element) => (
+                    
+                    <div className="flex"><button id={`${element.types[0].type.name}`} key={element.id}
+                    
+                    onClick = {()=> {
+                        let detalle = document.getElementById(element.id);
+                        detalle.classList.remove("hidden");
+                        detalle.classList.add("z-30", "bg-white" );
+                    }}>
+                        
                         {/* texto de número y nombre */}
                         <p className={estilos.nombre}>{element.id.toString().padStart(4, '0')}.<br></br> {element.name}</p>
+                        
                         {/* sprite */}
-                        <img src={element.sprites.front_default} alt="SPRITE" />
+                        <img className="Sprite" src={element.sprites.front_default} alt={`Sprite ${element.name}`} />
+                        
                         {/* div de tipos */}
                         <div className={estilos.tipos}>
+                            
                             {/* función de mapeo de tipos */}
                             {element.types.map((type, index) => (
                                 <p className={`${type.type.name}`} key={index}>
+                                
                                 {`${type.type.name}`}
+                                
                                 </p>
                             ))}
                         </div>
+                    </button> 
+                    <div id={element.id} className="hidden">
+                            <p>{element.name}</p>
+                            <p>{element.id}</p>
                     </div>
-                ))}
+                        <button className="z-40" onClick = {()=> {
+                            let detalles = document.getElementById(element.id);
+                            detalles.setAttribute("class","hidden")
+                            console.log("Has dado click") 
+                            }}>X
+                        </button>
+                    </div>))}
                 </div>
             </main>
-            <div className={estilos.componentes}>
-                <button id="boton" className={estilos.botonesComponentes}>List View</button>
-                <button id="boton" className={estilos.botonesComponentes}>
-                    <NavLink to="Detalle">Details</NavLink>
+            <header className={estilos.header}>
+                <button id="botonPrevious" className={estilos.botonesCambioPagina}>
+                    <p className="rotate-[-90deg]"
+                        onClick={()=> (rangoAlto === 101) ? setRangoAlto(1010) : setRangoAlto(rangoAlto - 101)}
+                    >PREVIOUS</p>
                 </button>
-                <button id="boton" className={estilos.botonesComponentes}>
-                    <NavLink to="Busqueda">Search</NavLink>
+                <button id="botonNext" className={estilos.botonesCambioPagina}>
+                    <p className="rotate-[90deg]"
+                        onClick={()=> (rangoAlto < 1010) ? setRangoAlto(rangoAlto + 101) : setRangoAlto(101)}
+                    >NEXT</p>
                 </button>
-                <button id="botonClose" className={estilos.botonesComponentes}>
-                    <NavLink to="/">Close</NavLink>
-                </button>
-            </div>
+            </header>
         </body>
         );
 
