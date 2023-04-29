@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Alert } from "flowbite-react";
 import { useEffect, useState } from "react";
 import "../TypeColor.css"
 
