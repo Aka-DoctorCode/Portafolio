@@ -57,16 +57,16 @@ const ListaPokeDex = () => {
                 {/* función de mapeo del grid */}
                 {nombres.slice(0, 101).map((element) => (
                     
-                    <div className="flex"><button id={`${element.types[0].type.name}`} key={element.id}
+                    <div className="flex"><button id={`${element.types[0].type.name}`} key={element.order}
                     
                     onClick = {()=> {
-                        let detalle = document.getElementById(element.id);
+                        let detalle = document.getElementById(element.order);
                         detalle.classList.remove("hidden");
                         detalle.classList.add("z-30", "bg-white" );
                     }}>
                         
                         {/* texto de número y nombre */}
-                        <p className={estilos.nombre}>{element.id.toString().padStart(4, '0')}.<br></br> {element.name}</p>
+                        <p className={estilos.nombre}>{element.order.toString().padStart(4, '0')}.<br></br> {element.name}</p>
                         
                         {/* sprite */}
                         <img className="Sprite" src={element.sprites.front_default} alt={`Sprite ${element.name}`} />
@@ -84,9 +84,9 @@ const ListaPokeDex = () => {
                             ))}
                         </div>
                     </button> 
-                    <div id={element.id} className="hidden">
+                    <div id={element.order} className="hidden">
                             <p>{element.name}</p>
-                            <p>{element.id}</p>
+                            <p>{element.order}</p>
                     </div>
                         <button className="z-40" onClick = {()=> {
                             let detalles = document.getElementById(element.id);

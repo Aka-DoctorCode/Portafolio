@@ -24,7 +24,8 @@ const Busqueda = () => {
             <h1>Serach for a Pokemon</h1>
             <p>input pokemon's name or number</p>
             <div>
-                <input id="nombre" type="text" />
+                <input
+                id="nombre" placeholder="Write the Pokemon's name of Number" type="text" />
                 <button onClick={
                     ()=>{
                         let nombrePokemon = document.getElementById("nombre").value;
