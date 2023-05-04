@@ -1,0 +1,47 @@
+main{background-color: #b13241e6;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-align: center;
+    text-shadow: 2px 4px black;
+}
+.buscar{
+    width: 10%;
+    height: 80%;
+    background: #168106;
+    text-transform: uppercase;
+    border: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 2px 4px black;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    margin-right: 10px;}
+.buscar:active{
+    transform: translateY(3px) translateX(2px); 
+    box-shadow: 0px 0px black;}
+
+    #fire{background-color: #F08030e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #normal{background-color: #a8a878e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #water{background-color: #6890F0e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #electric{background-color: #F8D030e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #grass{background-color: #78C850e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #bug{background-color: #A8B820e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #flying{background-color: #A890F0e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #fighting{background-color: #C03028e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #ice{background-color: #98D8D8e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #rock{background-color: #B8A038e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #ground{background-color: #E0C068e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #poison{background-color: #A040A0e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #psychic{background-color: #F85888e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #ghost{background-color: #705898e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #dragon{background-color: #7038F8e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #dark{background-color: #705848e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #steel{background-color: #B8B8D0e6; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
+    #fairy{background-color: #F0B6Be6c; text-transform: uppercase; display: flex; justify-content: space-around; margin: 5px; border: black; border-width: 3px; border-style: solid; color: white; font-weight: 900; font-size:large; text-align: center; box-shadow: 1px 2px black; text-shadow: 2px 3px black; border-radius: 20px;}
