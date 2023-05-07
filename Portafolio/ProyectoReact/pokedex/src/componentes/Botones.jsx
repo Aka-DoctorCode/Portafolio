@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../Styles/botones.css";
+import "../botones.css"
 
 
 const Botones = () => {

@@ -9,23 +9,25 @@
 .Alo {
   position: absolute;
   z-index: 0;
-  max-height: 60%;
-  animation: standBy 15s infinite linear;
-}
-@keyframes standBy {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-720deg);
-  }
+  height: 60%;
+  max-width: 100%;
 }
 .Alo2 {
   position: absolute;
   z-index: 0;
   animation: rotate 9.8s cubic-bezier(1, 0.3, 0.5, 1);
-  max-height: 60%;
+  height: 60%;
+  max-width: 100%;
 }
+@media only screen and (max-width: 600px) {
+  .Alo{
+    width: 250vw;
+  }
+  .Alo2 {
+    width: 250vw;
+  }
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

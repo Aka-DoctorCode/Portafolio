@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
-import './Styles/index.css';
+import './index.css';
 
 // Vista
 import Lista from './componentes/Lista';

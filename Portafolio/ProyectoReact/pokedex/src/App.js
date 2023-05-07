@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import './Styles/App.css';
-import Alo from "./Images/Pokedex.png"
+import './App.css';
+import Alo from './Fondos/1.png'
 
 function App() {
   // Cambio de velocidad del Alo
