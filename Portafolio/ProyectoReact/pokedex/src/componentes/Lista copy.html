@@ -1,0 +1,67 @@
+
+      {/* Delimitar el componente lista */}
+      <main className={estilos.main}>
+        <section className={estilos.section}>
+          {/* función de mapeo del grid */}
+          {nombres.slice(0, 101).map((element) => (
+            // div para delimitar la lista
+            
+            // agregar acción al apretar boton para colocarlo a la derecha
+            <div id={`pokemon-${element.id}`} key={element.id} className='w-full'>
+
+
+              {/* boton detalles */}
+              <button className={`Boton-${element.id}`} id={`${element.types[0].type.name}`} 
+              // función onClick para mostrar detalles
+              onClick = {()=> {
+                let detalle = document.getElementById(`descripcion-${element.id}`);
+                detalle.classList.remove("hidden");
+                detalle.classList.add(`${element.types[0].type.name + 1}`);
+                // if(  )
+              }}
+              >
+                {/* texto de número y nombre */}
+                <p className={estilos.nombre}>{element.id.toString().padStart(4, '0')}.<br></br> {element.name}</p>
+                {/* sprite */}
+                <img className="Sprite" src={element.sprites.front_default} alt={`Sprite ${element.name}`} />
+                {/* div de tipos */}
+                <div className={estilos.tipos}>
+                  {/* función de mapeo de tipos */}
+                  {element.types.map((type, index) => (
+                    <p className={`${type.type.name}`} key={index}>
+                    {`${type.type.name}`}
+                    </p>
+                  ))}
+                </div>
+              </button>
+              <section 
+              id={`descripcion-${element.id}`}
+              className="hidden"
+              // bg-[#0000009a] w-2/4 h-[98%] absolute 
+              >
+                <div>
+                  <p>{element.id}</p>
+                  <p>{element.name}</p>
+                  <button onClick = {()=> {
+                    let detalles = document.getElementById(`descripcion-${element.id}`);
+                    detalles.classList.add("hidden")
+                    detalles.classList.remove(`${element.types[0].type.name + 1}`);
+                    }}>CLOSE
+                  </button>
+                </div>
+              </section>
+            </div>))}
+          {/* <section className="bg-[#0000009a] fixed w-[43%] h-[91%] mt-2 ml-[49%] -z-10"></section> */}
+        </section>
+        <section id="detalles" className="col-span-1 bg-[#0000009a]">
+          
+        </section>
+      </main>
+        <section className={estilos.botonesCambio}>
+          <button id="botonPrevious" className={estilos.botonesCambioPagina}>
+            <p className="rotate-[-90deg]" onClick={()=> (rangoAlto === 101) ? setRangoAlto(1010) : setRangoAlto(rangoAlto - 101)}>PREVIOUS</p>
+          </button>
+          <button id="botonNext" className={estilos.botonesCambioPagina}>
+            <p className="rotate-[90deg]" onClick={()=> (rangoAlto < 1010) ? setRangoAlto(rangoAlto + 101) : setRangoAlto(101)}>NEXT</p>
+          </button>
+        </section>

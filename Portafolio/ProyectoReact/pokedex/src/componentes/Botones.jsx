@@ -8,17 +8,17 @@ const Botones = () => {
         botonesComponentes: "w-full h-8 mx-2",
     }
     return (
-        <section className={estilos.section}>
-                <button id="boton" className={estilos.botonesComponentes}>
-                    <NavLink to="/Lista">List View</NavLink>
-                </button>
-                <button id="boton" className={estilos.botonesComponentes}>
-                    <NavLink to="/Busqueda">Search</NavLink>
-                </button>
-                <button id="botonClose" className={estilos.botonesComponentes}>
-                    <NavLink to="/">Close</NavLink>
-                </button>
-            </section>
+        <header className={estilos.section}>
+            <button id="boton" className={estilos.botonesComponentes}>
+                <NavLink to="/Lista">List View</NavLink>
+            </button>
+            <button id="boton" className={estilos.botonesComponentes}>
+                <NavLink to="/Busqueda">Search</NavLink>
+            </button>
+            <button id="botonClose" className={estilos.botonesComponentes}>
+                <NavLink to="/">Close</NavLink>
+            </button>
+        </header>
     );
 }
 
