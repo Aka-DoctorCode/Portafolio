@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../TypeColor.css"
+// import BotonesCambioPagina from "./componentes/BotonesCambioPagina.jsx";
 
 
 const ListaPokeDex = () => {
@@ -41,8 +42,8 @@ const ListaPokeDex = () => {
 
   const estilos = {
     body: "flex items-start justify-center",
-    main: "grid grid-cols-3 w-[85vw] justify-self-center mt-12 bg-[#b13241e6] z-10 md:w-[92vw]",
-    section: "col-span-2",
+    main: "grid grid-cols-9 gap w-[85vw] justify-self-center mt-12 bg-[#b13241e6] z-10 md:w-[92vw]",
+    section: "col-span-5",
     nombre: "flex h-full text-left items-center mx-4 w-[15%]",
     tipos: "flex flex-col my-2 w-8% md:w-[15%]",
     botonesCambio: "flex justify-between fixed w-full ",
