@@ -74,7 +74,7 @@
 }
 .Cargar2{
   font-size: 2.5rem;
-  margin-bottom: -20%;
+  margin-bottom: -30%;
 }
 .Cargar3{
   font-size: 2.8rem;
@@ -104,7 +104,7 @@
   margin: 0% 30%;
 }
 #punto1, #punto2, #punto3, #punto4, #punto5{
-  font-size: 4rem;
+  font-size: 5rem;
   text-shadow: 0px 0px black;
   animation-name: punto;
   animation-duration: 1s;

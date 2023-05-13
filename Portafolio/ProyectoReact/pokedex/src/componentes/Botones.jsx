@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../botones.css"
+import "../Style/botones.css"
 
 
 const Botones = () => {
@@ -8,7 +8,7 @@ const Botones = () => {
         botonesComponentes: "w-full h-8 mx-2",
     }
     return (
-        <header className={estilos.section}>
+        <header id="Menu" className={estilos.section}>
             <button id="boton" className={estilos.botonesComponentes}>
                 <NavLink to="/Lista">List View</NavLink>
             </button>

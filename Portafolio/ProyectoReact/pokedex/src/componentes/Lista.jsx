@@ -1,14 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "../TypeColor.css"
-// import BotonesCambioPagina from "./componentes/BotonesCambioPagina.jsx";
+import "../Style/TypeColor.css"
+import BotonesCambioPagina from "./componentes/BotonesCambioPagina.jsx";
+import AreaDetalles from "./componentes/AreaDetalles.jsx";
 
 
 const ListaPokeDex = () => {
+
+  // nuevo
+
+    const [datos, setDatos] = useState('');
+    const manejarCambioDatos = (nuevosDatos) => {
+      setDatos(nuevosDatos);};
+  
   const [pokemon, setPokemon] = useState([]);
   const [nombres, setNombres] = useState([]);
+  
+  // Copiado en BotonesCambioPagina
   const [rangoAlto, setRangoAlto] = useState(101)
   const rangoBajo = rangoAlto - 101;
+  
+  // no ha sido usado
   // const [detalles, setDetalles] = useState([]);
   async function obtenerDatos() {
     try {
@@ -39,7 +51,6 @@ const ListaPokeDex = () => {
     obtenerDatos();
     obtenerNombres();
 	}, [pokemon]);
-
   const estilos = {
     body: "flex items-start justify-center",
     main: "grid grid-cols-9 gap w-[85vw] justify-self-center mt-12 bg-[#b13241e6] z-10 md:w-[92vw]",
@@ -50,12 +61,14 @@ const ListaPokeDex = () => {
     botonesCambioPagina: "w-8 h-screen mt-12",
   }
 
-
-
   return (
-    <body className={estilos.body}>
-      
-    </body>
+    <section id="Lista" className={estilos.body}>
+      <div>
+        {/* nuevo */}
+        <AreaDetalles datos={datos} />
+        <BotonesCambioPagina onChangeDatos={manejarCambioDatos} />
+      </div>
+    </section>
   );
 };
 

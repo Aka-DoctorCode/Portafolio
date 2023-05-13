@@ -1,15 +1,17 @@
-# # crear un software que envie al profesor la letra de Coldplay - Viva la vida, cada 30 segundos unas 15 veces usando pywhatkit.
-# import pywhatkit
-# import time
-
-# for i in range(2):
-#     # pywhatkit.sendwhatmsg("+584143936561", "Hola", 21, 23)
-#     pywhatkit.sendwhatmsg_instantly("+584143936561", "Hola")
-#     time.sleep(30)
-
 import pywhatkit
 import time
-for i in range(4):
-    pywhatkit.sendwhatmsg_instantly("+56934887809", "Este mensaje se enviara 3 veces, cada 20 seg")
-    # time.sleep(20)
-print("Se enviaron todos los mensajes")
+
+# Define el número de teléfono de destino
+num_tel = "+584143936561"
+
+# Define el mensaje que deseas enviar
+mensaje = "Coldplay - Viva la vida"
+
+# Define la hora en que deseas enviar el mensaje (en formato 24 horas)
+hora = 20
+minutos = 32
+
+# Bucle para enviar el mensaje cada 30 segundos
+for i in range(2):
+    pywhatkit.sendwhatmsg(num_tel, mensaje, hora, minutos)
+    time.sleep(30)
