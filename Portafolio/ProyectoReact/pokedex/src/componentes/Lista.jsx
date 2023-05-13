@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../Style/TypeColor.css"
-import BotonesCambioPagina from "./componentes/BotonesCambioPagina.jsx";
-import AreaDetalles from "./componentes/AreaDetalles.jsx";
+// import BotonesCambioPagina from "./BotonesCambioPagina.jsx";
+import AreaDetalles from "./AreaDetalles.jsx";
 
 
 const ListaPokeDex = () => {
@@ -66,7 +66,7 @@ const ListaPokeDex = () => {
       <div>
         {/* nuevo */}
         <AreaDetalles datos={datos} />
-        <BotonesCambioPagina onChangeDatos={manejarCambioDatos} />
+        {/* <BotonesCambioPagina onChangeDatos={manejarCambioDatos} /> */}
       </div>
     </section>
   );
