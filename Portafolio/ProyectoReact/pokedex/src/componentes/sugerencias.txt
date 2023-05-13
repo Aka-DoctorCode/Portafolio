@@ -1,0 +1,73 @@
+Error handling:
+// Define state variables for the error message and whether an error has occurred
+const [errorMessage, setErrorMessage] = useState("");
+const [hasError, setHasError] = useState(false);
+
+// Define a try-catch block to catch errors and update state variables accordingly
+try {
+  const response = await axios.get(
+    `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
+  );
+  setPokemon(response.data.results);
+  setHasError(false);
+} catch (error) {
+  setErrorMessage(`Error: ${error.message}`);
+  setHasError(true);
+}
+
+// Render the error message if an error has occurred
+if (hasError) {
+  return <div>{errorMessage}</div>;
+}
+
+
+
+Reusable components:
+// Define a PokemonItem component that takes a Pokemon object as props and renders it
+const PokemonItem = ({ pokemon }) => {
+  return (
+    <div>
+      <h2>{pokemon.name}</h2>
+      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      <p>{pokemon.types[0].type.name}</p>
+    </div>
+  );
+};
+
+// Use the PokemonItem component to render each Pokemon in the list
+return (
+  <div>
+    {pokemon.map((pokemon) => (
+      <PokemonItem key={pokemon.id} pokemon={pokemon} />
+    ))}
+  </div>
+);
+
+
+
+Search and filtering:
+// Define state variables for the search query and filtered results
+const [searchQuery, setSearchQuery] = useState("");
+const [filteredPokemon, setFilteredPokemon] = useState(pokemon);
+
+// Define a function to filter the list of Pokemon based on the search query
+const handleSearchQueryChange = (event) => {
+  const query = event.target.value;
+  setSearchQuery(query);
+  const filteredResults = pokemon.filter(
+    (pokemon) =>
+      pokemon.name.includes(query) ||
+      pokemon.types.some((type) => type.type.name.includes(query))
+  );
+  setFilteredPokemon(filteredResults);
+};
+
+// Render the search input field and the filtered list of results
+return (
+  <div>
+    <input type="text" onChange={handleSearchQueryChange} />
+    {filteredPokemon.map((pokemon) => (
+      <PokemonItem key={pokemon.id} pokemon={pokemon} />
+    ))}
+
+
