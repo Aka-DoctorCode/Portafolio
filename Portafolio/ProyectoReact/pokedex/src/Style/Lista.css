@@ -1,0 +1,40 @@
+#Body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#Principal{
+    width: 85vw;
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    justify-self: center;
+    background-color: #b13241e6;
+    margin-top: 3rem;
+    gap: 4px;
+    z-index: 1;
+}
+
+#Lista{
+    grid-column: span 5;
+}
+
+.Pokemon{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-around;
+    margin: 0px;
+}
+.Nombre{
+    margin: 0;
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-align: left;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-shadow: 2px 3px black;
+}

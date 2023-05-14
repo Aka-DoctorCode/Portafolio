@@ -1,7 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import "../Style/TypeColor.css"
+import axios from "axios";
 import AreaDetalles from "./AreaDetalles"
+import "../Style/TypeColor.css"
+import "../Style/Lista.css"
 
 const ListaPokeDex = () => {
 	const [pokemon, setPokemon] = useState([]);
@@ -43,12 +44,9 @@ const ListaPokeDex = () => {
 		}
 		obtenerDatos();
 		obtenerNombres();
-	}, [obtenerDatos]);
+	},);
 
 	const estilos = {
-		body: "flex items-start justify-center",
-		main: "grid grid-cols-9 gap w-[85vw] justify-self-center mt-12 bg-[#b13241e6] z-10 md:w-[92vw]",
-		section: "col-span-5",
 		nombre: "flex h-full text-left items-center mx-4 w-[15%]",
 		tipos: "flex flex-col my-2 w-8% md:w-[15%]",
 		botonesCambio: "flex justify-between fixed w-full ",
@@ -57,27 +55,29 @@ const ListaPokeDex = () => {
 	}
 
 	return (
-		<section id="Lista" className={estilos.body}>
-
+		<main id="Body">
 			{/* Delimitar el componente lista */}
-			<main className={estilos.main}>
-				<section className={estilos.section}>
+			<section id="Principal">
+				<div id="Lista">
 					{/* función de mapeo del grid */}
 					{nombres.slice(0, 101).map((element) => (
-						<div id={`pokemon-${element.id}`} key={element.id} className='w-full'>
+						<div id={element.name} key={element.id}>
 							{/* boton detalles */}
-							<button className={`Boton-${element.id}`} id={`${element.types[0].type.name}`}
+							<button className="Pokemon" id={element.types[0].type.name}
 								// función onClick para mostrar detalles
-								onClick={
-									() => {
+								onClick={() => {
 										setPokename(element.name);
 										setPokeid(element.id);
 										setPoketipo(element.types[0].type.name);
 										setPokeEspecie(element.species.name);
-									}
-								}>
+									}}
+								>
 								{/* texto de número y nombre */}
-								<p className={estilos.nombre}>{element.id.toString().padStart(4, '0')}.<br></br> {element.name}</p>
+								<p className="Nombre" >
+									{element.id.toString().padStart(4, '0')}.
+									<br></br> 
+									{element.name}
+								</p>
 								{/* sprite */}
 								<img className="Sprite" src={element.sprites.front_default} alt={`Sprite ${element.name}`} />
 								{/* div de tipos */}
@@ -93,8 +93,8 @@ const ListaPokeDex = () => {
 						</div>
 					))
 					}
-				</section>
-				<section id="detalles" className="col-span-4 bg-[#0000009a] w-[40vw] fixed left-[55.5vw]">
+				</div>
+				<div id="detalles" className="col-span-4 bg-[#0000009a] w-[40vw] fixed left-[55.5vw]">
 					<AreaDetalles
 						clases={estilos.detalles}
 						idcss={poketipo}
@@ -103,8 +103,8 @@ const ListaPokeDex = () => {
 						species={pokeEspecie}
 						types={poketipo}
 					/>
-				</section>
-			</main>
+				</div>
+			</section>
 			<section id="BotonesCambioPagina" className={estilos.botonesCambio}>
 				<button id="botonPrevious" className={estilos.botonesCambioPagina}>
 					<p className="rotate-[-90deg]" onClick={() => (rangoAlto === 101) ? setRangoAlto(1010) : setRangoAlto(rangoAlto - 101)}>PREVIOUS</p>
@@ -113,7 +113,7 @@ const ListaPokeDex = () => {
 					<p className="rotate-[90deg]" onClick={() => (rangoAlto < 1010) ? setRangoAlto(rangoAlto + 101) : setRangoAlto(101)}>NEXT</p>
 				</button>
 			</section>
-		</section>
+		</main>
 	);
 };
 
