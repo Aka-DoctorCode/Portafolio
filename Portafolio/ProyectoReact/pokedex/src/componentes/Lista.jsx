@@ -14,37 +14,48 @@ const ListaPokeDex = () => {
 
 	// Copiado en BotonesCambioPagina
 	const [rangoAlto, setRangoAlto] = useState(101)
+	console.log(rangoAlto)
 	const rangoBajo = rangoAlto - 101;
+	console.log(rangoBajo) 
 
 	async function obtenerDatos() {
+		const res = await axios.get(
+			`https://pokeapi.co/api/v2/pokemon/?offset=${rangoBajo}&limit=${rangoAlto}`
+		);
+		console.log(res.data.results);
+		setPokemon(res.data.results);
+	}
+	async function obtenerNombres() {
 		try {
-			const res = await axios.get(
-				`https://pokeapi.co/api/v2/pokemon/?offset=${rangoBajo}&limit=${rangoAlto}`
-			);
-			setPokemon(res.data.results);
-		} catch (err) {
-			console.log(`Ocurrio un error: ${err}`);
-		}
-	};
-	useEffect(() => {
-		async function obtenerNombres() {
 			const results = await Promise.all(
-				pokemon.map(async (pokemon) => {
+				pokemon.map(async pokemon => {
 					try {
-						const res = await axios.get(
-							`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-						);
+						const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
+						console.log(res.data);
 						return res.data;
-					} catch (err) {
-						console.log(`Ocurrio un error: ${err}`);
+					} catch (error) {
+						console.error('Error fetching data for', pokemon.name, error);
+						throw error;
 					}
 				})
 			);
+			console.log(results);
 			setNombres(results);
+		} catch (error) {
+			console.error('Error fetching pokemon names:', error);
 		}
+	}
+	useEffect(() => {
 		obtenerDatos();
-		obtenerNombres();
-	},);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [rangoAlto]);
+	useEffect(() => {
+		if (pokemon.length > 0) {
+			obtenerNombres();
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [pokemon.length]);
+	
 
 	const estilos = {
 		nombre: "flex h-full text-left items-center mx-4 w-[15%]",
@@ -107,10 +118,28 @@ const ListaPokeDex = () => {
 			</section>
 			<section id="BotonesCambioPagina" className={estilos.botonesCambio}>
 				<button id="botonPrevious" className={estilos.botonesCambioPagina}>
-					<p className="rotate-[-90deg]" onClick={() => (rangoAlto === 101) ? setRangoAlto(1010) : setRangoAlto(rangoAlto - 101)}>PREVIOUS</p>
+					<p className="rotate-[-90deg]" 
+						onClick={() => {
+							if (rangoAlto === 101) {
+								setRangoAlto(1010);
+							} else {
+								setRangoAlto(rangoAlto - 101);
+							}
+							obtenerDatos();
+						}}
+					>PREVIOUS</p>
 				</button>
 				<button id="botonNext" className={estilos.botonesCambioPagina}>
-					<p className="rotate-[90deg]" onClick={() => (rangoAlto < 1010) ? setRangoAlto(rangoAlto + 101) : setRangoAlto(101)}>NEXT</p>
+					<p className="rotate-[90deg]" 
+						onClick={() => {
+							if (rangoAlto < 1010) {
+								setRangoAlto(rangoAlto + 101);
+							} else {
+								setRangoAlto(101);
+							}
+							obtenerDatos();
+						}}
+					>NEXT</p>
 				</button>
 			</section>
 		</main>
