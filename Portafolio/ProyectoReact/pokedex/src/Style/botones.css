@@ -1,80 +1,68 @@
-#boton{background: #168106; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; ;}
-#boton:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
-
-#botonPrevious{background: #168106; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-left: 10px;}
-#botonPrevious:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
-
-#botonNext{background: #168106; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-right: 10px;}
-#botonNext:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
-
-#botonClose{background: #168106; width: 20vw; text-transform: uppercase; border: 1px; border-width: 2px; border-style: solid; border-color: black; border-radius: 10px; box-shadow: 2px 4px black; color: white; font-weight: 900; font-size:large; text-align: center; text-shadow: 2px 2px black; margin-right: 10px;}
-#botonClose:active{transform: translateY(3px) translateX(2px); box-shadow: 0px 0px black;}
-
-.Sprite:hover{
-    animation: walk 10s;
+#Menu{
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    position: fixed;
+    justify-self: center;
+    background-color: #D42C3F;
+    z-index: 2;
 }
-@keyframes walk {
-    0% {
-        transform: translateX(0px);
-    }
-    20%{
-        transform: translateX(-100px);
-    }
-    22% {
-        transform: scaleX(-1) translateX(100px);
-    }
-    40%{
-        transform: scaleX(-1) translateX(-100px);
-    }
-    42%{
-        transform:translateX(100px);
-    }
-    60%{
-        transform: translateX(0px)
-    }
-    65%{
-        transform: scalex(-1);
-    }
-    68%{
-        transform: scalex(1);
-    }
-    71%{
-        transform: scalex(-1);
-    }
-    73%{
-        transform: scalex(-1) translateX(-105px);
-    }
-    73%{
-        transform: scalex(-1) translateX(-105px) rotate(-120deg);
-    }
-    75%{
-        transform: scalex(-1) translateX(-105px) rotate(-120deg);
-    }
-    76%{
-        transform: scalex(-1) translateX(-105px) rotate(-120deg);
-    }
-    77%{
-        transform: scalex(-1) translateX(-105px) rotate(-60deg);
-    }
-    80%{
-        transform: scalex(-1) translateX(-105px);
-    }
-    80%{
-        transform: scalex(-1);
-    }
-    90%{
-        transform: scalex(-1);
-    }
-    92%{
-        transform: translateY(-15px)
-    }
-    94%{
-        transform: translateY(0px)
-    }
-    96%{
-        transform: translateY(-15px)
-    } 
-    100% {
-        transform: translateY(0px)
-    }
+#boton, #botonClose, #botonPrevious, #botonNext{
+    background: #168106;
+    border: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 2px 4px black;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+#boton, #botonClose{
+    width: 100%;
+    height: 32px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+#botonClose{
+    width: 20vw;
+    margin-right: 10px;}
+#BotonesCambioPagina{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+#botonPrevious, #botonNext{
+    width: 2.5rem;
+    height: 88vh;
+    margin-top: 2.9rem;
+}
+#botonPrevious{
+    margin-left: 15px;
+}
+#botonNext{
+    margin-right: 15px;
+}
+#botonPrevious p{
+    rotate: -90deg;
+}
+#botonNext p{
+    rotate: 90deg;
+}
+#boton:active, #botonClose:active, #botonPrevious:active, #botonNext:active{
+    transform: translateY(3px) translateX(2px);
+    box-shadow: 0px 0px black;
+}
+.link{
+    text-decoration: none;
+    color:white
+}
+.link div{
+    width: 100%;
 }

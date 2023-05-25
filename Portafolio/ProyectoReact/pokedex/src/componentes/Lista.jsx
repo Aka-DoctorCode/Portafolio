@@ -7,10 +7,11 @@ import "../Style/Lista.css"
 const ListaPokeDex = () => {
 	const [pokemon, setPokemon] = useState([]);
 	const [nombres, setNombres] = useState([]);
-	const [poketipo, setPoketipo] = useState("");
+
 	const [pokeid, setPokeid] = useState("");
 	const [pokename, setPokename] = useState("");
 	const [pokeEspecie, setPokeEspecie] = useState("");
+	const [poketipo, setPoketipo] = useState(""); 
 
 	// Copiado en BotonesCambioPagina
 	const [rangoAlto, setRangoAlto] = useState(101)
@@ -55,15 +56,6 @@ const ListaPokeDex = () => {
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pokemon.length]);
-	
-
-	const estilos = {
-		nombre: "flex h-full text-left items-center mx-4 w-[15%]",
-		tipos: "flex flex-col my-2 w-8% md:w-[15%]",
-		botonesCambio: "flex justify-between fixed w-full ",
-		botonesCambioPagina: "w-8 h-screen mt-12",
-		detalles: "flex h-[300px]"
-	}
 
 	return (
 		<main id="Body">
@@ -74,7 +66,7 @@ const ListaPokeDex = () => {
 					{nombres.slice(0, 101).map((element) => (
 						<div id={element.name} key={element.id}>
 							{/* boton detalles */}
-							<button className="Pokemon" id={element.types[0].type.name}
+							<button className={`${element.types[0].type.name}Boton`}
 								// función onClick para mostrar detalles
 								onClick={() => {
 										setPokename(element.name);
@@ -84,15 +76,15 @@ const ListaPokeDex = () => {
 									}}
 								>
 								{/* texto de número y nombre */}
-								<p className="Nombre" >
+								<p className="NombreYNumero" >
 									{element.id.toString().padStart(4, '0')}.
 									<br></br> 
 									{element.name}
 								</p>
 								{/* sprite */}
-								<img className="Sprite" src={element.sprites.front_default} alt={`Sprite ${element.name}`} />
+								<img className="Sprite" src={element.sprites.front_default} alt={`${element.name}'s Sprite`} />
 								{/* div de tipos */}
-								<div className={estilos.tipos}>
+								<div className="DivTipos">
 									{/* función de mapeo de tipos */}
 									{element.types.map((type, index) => (
 										<p className={`${type.type.name}`} key={index}>
@@ -105,10 +97,10 @@ const ListaPokeDex = () => {
 					))
 					}
 				</div>
-				<div id="detalles" className="col-span-4 bg-[#0000009a] w-[40vw] fixed left-[55.5vw]">
+				<div id="detalles">
 					<AreaDetalles
-						clases={estilos.detalles}
-						idcss={poketipo}
+						clases=""
+						idcss={pokename}
 						id={pokeid}
 						name={pokename}
 						species={pokeEspecie}
@@ -116,29 +108,20 @@ const ListaPokeDex = () => {
 					/>
 				</div>
 			</section>
-			<section id="BotonesCambioPagina" className={estilos.botonesCambio}>
-				<button id="botonPrevious" className={estilos.botonesCambioPagina}>
-					<p className="rotate-[-90deg]" 
-						onClick={() => {
-							if (rangoAlto === 101) {
-								setRangoAlto(1010);
-							} else {
-								setRangoAlto(rangoAlto - 101);
-							}
-							obtenerDatos();
-						}}
+			<section id="BotonesCambioPagina">
+				<button id="botonPrevious">
+					<p onClick={() => {
+						const nuevoRangoAlto = rangoAlto === 101 ? 1010 : rangoAlto - 101;
+						setRangoAlto(nuevoRangoAlto);
+						obtenerDatos();
+					}}
 					>PREVIOUS</p>
 				</button>
-				<button id="botonNext" className={estilos.botonesCambioPagina}>
-					<p className="rotate-[90deg]" 
-						onClick={() => {
-							if (rangoAlto < 1010) {
-								setRangoAlto(rangoAlto + 101);
-							} else {
-								setRangoAlto(101);
-							}
-							obtenerDatos();
-						}}
+				<button id="botonNext">
+					<p onClick={() => {
+						setRangoAlto((rangoAlto < 1010) ? rangoAlto + 101 : 101);
+						obtenerDatos();
+					}}
 					>NEXT</p>
 				</button>
 			</section>

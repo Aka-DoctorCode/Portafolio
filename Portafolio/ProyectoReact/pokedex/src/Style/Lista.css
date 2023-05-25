@@ -5,7 +5,7 @@
 }
 
 #Principal{
-    width: 85vw;
+    width: 90vw;
     display: grid;
     grid-template-columns: repeat(9, minmax(0, 1fr));
     justify-self: center;
@@ -26,7 +26,8 @@
     justify-content: space-around;
     margin: 0px;
 }
-.Nombre{
+
+.NombreYNumero{
     margin: 0;
     width: 150px;
     height: 50px;
@@ -37,4 +38,96 @@
     vertical-align: middle;
     text-transform: uppercase;
     text-shadow: 2px 3px black;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.Sprite:hover{
+    animation: walk 10s;
+    transition: 2;
+    z-index: 1;
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(0px);
+    }
+    20%{
+        transform: translateX(-100px);
+    }
+    22% {
+        transform: scaleX(-1) translateX(100px);
+    }
+    40%{
+        transform: scaleX(-1) translateX(-100px);
+    }
+    42%{
+        transform:translateX(100px);
+    }
+    60%{
+        transform: translateX(0px)
+    }
+    65%{
+        transform: scalex(-1);
+    }
+    68%{
+        transform: scalex(1);
+    }
+    71%{
+        transform: scalex(-1);
+    }
+    73%{
+        transform: scalex(-1) translateX(-105px);
+    }
+    73%{
+        transform: scalex(-1) translateX(-105px) rotate(-120deg);
+    }
+    75%{
+        transform: scalex(-1) translateX(-105px) rotate(-120deg);
+    }
+    76%{
+        transform: scalex(-1) translateX(-105px) rotate(-120deg);
+    }
+    77%{
+        transform: scalex(-1) translateX(-105px) rotate(-60deg);
+    }
+    80%{
+        transform: scalex(-1) translateX(-105px);
+    }
+    80%{
+        transform: scalex(-1);
+    }
+    90%{
+        transform: scalex(-1);
+    }
+    92%{
+        transform: translateY(-15px)
+    }
+    94%{
+        transform: translateY(0px)
+    }
+    96%{
+        transform: translateY(-15px)
+    } 
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+.DivTipos{
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+#detalles{
+    column-span: 4;
+    z-index: -1;
+    background-color: #0000009a;
+    width: 39vw;
+    position: fixed;
+    left: 55.5vw;
+    height: 93vh;
 }
