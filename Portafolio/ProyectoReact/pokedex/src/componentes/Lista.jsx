@@ -8,10 +8,25 @@ const ListaPokeDex = () => {
 	const [pokemon, setPokemon] = useState([]);
 	const [nombres, setNombres] = useState([]);
 
-	const [pokeid, setPokeid] = useState("");
-	const [pokename, setPokename] = useState("");
-	const [pokeEspecie, setPokeEspecie] = useState("");
-	const [poketipo, setPoketipo] = useState(""); 
+	// Datos props
+	const [pokeId, setPokeId] = useState("");
+	const [pokeName, setPokeName] = useState("");
+	const [pokeType, setPokeType] = useState("");
+	const [pokeType2, setPokeType2] = useState("");
+	const [pokeAbility, setPokeAbility] = useState("");
+	const [pokeHiddenAbility, setPokeHiddenAbility] = useState("");
+	const [pokeBaseEXP, setPokeBaseEXP] = useState("");
+	const [pokeHeight, setPokeHeight] = useState("");
+	const [pokeWeight, setPokeWeight] = useState("");
+	const [pokeSprite, setPokeSprite] = useState("");
+	const [pokeShinySprite, setPokeShinySprite] = useState("");
+	const [pokeHp, setPokeHp] = useState("");
+	const [pokeAtk, setPokeAtk] = useState("");
+	const [pokeDef, setPokeDef] = useState("");
+	const [pokeSpAtk, setPokeSpAtk] = useState("");
+	const [pokeSpDef, setPokeSpDef] = useState("");
+	const [pokeSpeed, setPokeSpeed] = useState("");
+
 
 	// Copiado en BotonesCambioPagina
 	const [rangoAlto, setRangoAlto] = useState(101)
@@ -69,12 +84,26 @@ const ListaPokeDex = () => {
 							<button className={`${element.types[0].type.name}Boton`}
 								// función onClick para mostrar detalles
 								onClick={() => {
-										setPokename(element.name);
-										setPokeid(element.id);
-										setPoketipo(element.types[0].type.name);
-										setPokeEspecie(element.species.name);
-									}}
-								>
+									setPokeName(element.name);
+									setPokeId(element.id);
+									setPokeType(element.types[0].type.name);
+									const pokeType2 = element.types.length > 1 ? element.types[1].type.name : null;
+									setPokeType2(pokeType2);
+									setPokeAbility(element.abilities[0].ability.name);
+									const pokeHiddenAbility = element.abilities.length > 1 ? element.abilities[1].ability.name : null;
+									setPokeHiddenAbility(pokeHiddenAbility);
+									setPokeBaseEXP(element.base_experience);
+									setPokeHeight(element.height);
+									setPokeWeight(element.weight);
+									setPokeSprite(element.sprites.other['official-artwork'].front_default);
+									setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny);
+									setPokeHp(element.stats[0].base_stat);
+									setPokeAtk(element.stats[1].base_stat);
+									setPokeDef(element.stats[2].base_stat);
+									setPokeSpAtk(element.stats[3].base_stat);
+									setPokeSpDef(element.stats[4].base_stat);
+									setPokeSpeed(element.stats[5].base_stat);
+								}}>
 								{/* texto de número y nombre */}
 								<p className="NombreYNumero" >
 									{element.id.toString().padStart(4, '0')}.
@@ -99,12 +128,23 @@ const ListaPokeDex = () => {
 				</div>
 				<div id="detalles">
 					<AreaDetalles
-						clases=""
-						idcss={pokename}
-						id={pokeid}
-						name={pokename}
-						species={pokeEspecie}
-						types={poketipo}
+						id={pokeId}
+						name={pokeName}
+						types={pokeType}
+						type2={pokeType2}
+						ability={pokeAbility}
+						hiddenAbility={pokeHiddenAbility}
+						baseEXP={pokeBaseEXP}
+						height={pokeHeight}
+						weight={pokeWeight}
+						sprite={pokeSprite}
+						shinySprite={pokeShinySprite}
+						hp={pokeHp}
+						atk={pokeAtk}
+						def={pokeDef}
+						spAtk={pokeSpAtk}
+						spDef={pokeSpDef}
+						speed={pokeSpeed}
 					/>
 				</div>
 			</section>
