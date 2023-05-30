@@ -36,3 +36,9 @@
 .darkdetalles{background-color: #705848;}
 .steeldetalles{background-color: #B8B8D0;}
 .fairydetalles{background-color: #F0B6BC;}
+
+#cabecera{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
