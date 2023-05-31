@@ -1,5 +1,5 @@
 .Sprites{
-    width: 45%;
+    width: 50%;
 }
 .firedetalles, .normaldetalles, .waterdetalles, .electricdetalles, .grassdetalles, .bugdetalles, .flyingdetalles, .fightingdetalles, .icedetalles, .rockdetalles, .grounddetalles, .poisondetalles, .psychicdetalles, .ghostdetalles, .dragondetalles, .darkdetalles, .steeldetalles, .fairydetalles{
     width: auto;
@@ -10,7 +10,7 @@
     border-width: 10px;
     border-style: solid;
     border-radius: 10px;
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: #0000009a;
     color: white;
     font-weight: 900;
     font-size:large;
@@ -37,8 +37,31 @@
 .steeldetalles{background-color: #B8B8D0;}
 .fairydetalles{background-color: #F0B6BC;}
 
+#AreaSuperior{
+    display: flex;
+    flex-direction: column;
+    background-color: #0000009a;
+    border: rgb(0, 0, 0);
+    box-shadow: 2px 4px black;    
+    border-radius: 20%;
+    border-style:inherit;
+    border-width: 10px;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+}
 #cabecera{
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+#imagenes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#Shiny, #Normal{
+    justify-self: center;
+    align-self: center;
 }
