@@ -1,9 +1,9 @@
 .Sprites{
-    width: 50%;
+    width: 100%;
 }
 .firedetalles, .normaldetalles, .waterdetalles, .electricdetalles, .grassdetalles, .bugdetalles, .flyingdetalles, .fightingdetalles, .icedetalles, .rockdetalles, .grounddetalles, .poisondetalles, .psychicdetalles, .ghostdetalles, .dragondetalles, .darkdetalles, .steeldetalles, .fairydetalles{
     width: auto;
-    height: 610px;
+    height: auto;
     margin: 4px; 
     padding: 5px;
     border: 1px;
@@ -12,11 +12,11 @@
     border-radius: 10px;
     border-color: #0000009a;
     color: white;
-    font-weight: 900;
+    font-weight: 700;
     font-size:large;
     text-align: center;
-    text-transform: uppercase;
-    text-shadow: 2px 3px black;
+    text-transform: capitalize;
+    text-shadow: 1px 1px black;
 }
 .normaldetalles{background-color: #a8a878;}
 .firedetalles{background-color: #F08030;}
@@ -42,18 +42,20 @@
     flex-direction: column;
     background-color: #0000009a;
     border: rgb(0, 0, 0);
-    box-shadow: 2px 4px black;    
-    border-radius: 20%;
+    box-shadow: 1px 1px black;    
+    border-radius: 5%;
     border-style:inherit;
-    border-width: 10px;
+    border-width: 4px;
     margin-left: 4%;
     margin-right: 4%;
-    margin-top: 2%;
+    margin-bottom: -2%;
 }
 #cabecera{
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-bottom: -3%;
+    margin-top: -3%;
 }
 #imagenes{
     display: flex;
@@ -64,4 +66,29 @@
 #Shiny, #Normal{
     justify-self: center;
     align-self: center;
+}
+#tipo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+    margin-top: -3%;
+}
+#AreaIntermedia{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+    margin-top: 3%;
+}
+#AreaIntermedia span{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 1% 13%;
+    text-align: left;
+    width: 80%;
+    border-bottom: 2px solid #0000009a;
+}
+#Stats{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }

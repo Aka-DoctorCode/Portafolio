@@ -37,7 +37,7 @@
     text-align: left;
     vertical-align: middle;
     text-transform: uppercase;
-    text-shadow: 2px 3px black;
+    text-shadow: 1px 1px black;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -130,4 +130,10 @@
     position: fixed;
     left: 55.5vw;
     height: 93vh;
+    overflow: auto;
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 50% 0%;
 }

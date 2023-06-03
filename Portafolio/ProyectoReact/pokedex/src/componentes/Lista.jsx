@@ -26,6 +26,7 @@ const ListaPokeDex = () => {
 	const [pokeSpAtk, setPokeSpAtk] = useState("");
 	const [pokeSpDef, setPokeSpDef] = useState("");
 	const [pokeSpeed, setPokeSpeed] = useState("");
+	const [title, setTitle] = useState(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
 
 
 	// Copiado en BotonesCambioPagina
@@ -33,7 +34,6 @@ const ListaPokeDex = () => {
 	console.log(rangoAlto)
 	const rangoBajo = rangoAlto - 101;
 	console.log(rangoBajo) 
-
 	async function obtenerDatos() {
 		const res = await axios.get(
 			`https://pokeapi.co/api/v2/pokemon/?offset=${rangoBajo}&limit=${rangoAlto}`
@@ -103,6 +103,7 @@ const ListaPokeDex = () => {
 									setPokeSpAtk(element.stats[3].base_stat);
 									setPokeSpDef(element.stats[4].base_stat);
 									setPokeSpeed(element.stats[5].base_stat);
+									setTitle("");
 								}}>
 								{/* texto de número y nombre */}
 								<p className="NombreYNumero" >
@@ -127,25 +128,32 @@ const ListaPokeDex = () => {
 					}
 				</div>
 				<div id="detalles">
-					<AreaDetalles
-						id={pokeId}
-						name={pokeName}
-						types={pokeType}
-						type2={pokeType2}
-						ability={pokeAbility}
-						hiddenAbility={pokeHiddenAbility}
-						baseEXP={pokeBaseEXP}
-						height={pokeHeight}
-						weight={pokeWeight}
-						sprite={pokeSprite}
-						shinySprite={pokeShinySprite}
-						hp={pokeHp}
-						atk={pokeAtk}
-						def={pokeDef}
-						spAtk={pokeSpAtk}
-						spDef={pokeSpDef}
-						speed={pokeSpeed}
-					/>
+					{pokeId && pokeName && pokeType && pokeAbility && pokeBaseEXP && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
+						<AreaDetalles
+							id={pokeId}
+							name={pokeName}
+							types={pokeType}
+							type2={pokeType2}
+							ability={pokeAbility}
+							hiddenAbility={(pokeHiddenAbility) 
+								? (pokeHiddenAbility) 
+								: "No Hidden Ability"
+							}
+							height={(pokeHeight / 10) + " meters"}
+							weight={(pokeWeight / 10) + " kg"}
+							baseEXP={pokeBaseEXP}
+							sprite={pokeSprite}
+							shinySprite={pokeShinySprite}
+							hp={pokeHp}
+							atk={pokeAtk}
+							def={pokeDef}
+							spAtk={pokeSpAtk}
+							spDef={pokeSpDef}
+							speed={pokeSpeed}
+							Title= {null}
+						/>
+					) :	title
+					}
 				</div>
 			</section>
 			<section id="BotonesCambioPagina">

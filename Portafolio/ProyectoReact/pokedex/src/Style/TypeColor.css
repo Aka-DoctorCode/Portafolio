@@ -87,11 +87,11 @@
     border-color: black;
     box-shadow: 2px 4px black;
     color: white;
-    font-weight: 900;
+    font-weight: 700;
     font-size:large;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 2px 3px black;
+    text-shadow: 1px 1px black;
 }
 
 /* .normal1{background-color: #a8a878;}
@@ -130,7 +130,7 @@
     font-size:large;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 2px 3px black;
+    text-shadow: 1px 1px black;
 } */
 
 /* #fire1, #normal1, #water1, #electric1, #grass1, #bug1, #flying1, #fighting1, #ice1, #rock1, #ground1, #poison1, #psychic1, #ghost1, #dragon1, #dark1, #steel1, #fairy1{
@@ -149,5 +149,5 @@
     font-size:large;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 2px 3px black;
+    text-shadow: 1px 1px black;
 } */

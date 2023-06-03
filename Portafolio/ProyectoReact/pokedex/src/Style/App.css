@@ -39,7 +39,7 @@
   font-size: x-large;
   font-weight: bolder;
   font-family: system-ui;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 .Centro {
   transform: translateY(-6px) translateX(-4px);
@@ -82,7 +82,7 @@
 @keyframes cargar {
   0%{
     color: rgb(105, 0, 0);
-    text-shadow: 2px 2px black;
+    text-shadow: 1px 1px black;
     color: white
   }
   50%{
