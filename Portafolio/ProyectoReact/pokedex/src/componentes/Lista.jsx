@@ -15,7 +15,6 @@ const ListaPokeDex = () => {
 	const [pokeType2, setPokeType2] = useState("");
 	const [pokeAbility, setPokeAbility] = useState("");
 	const [pokeHiddenAbility, setPokeHiddenAbility] = useState("");
-	const [pokeBaseEXP, setPokeBaseEXP] = useState("");
 	const [pokeHeight, setPokeHeight] = useState("");
 	const [pokeWeight, setPokeWeight] = useState("");
 	const [pokeSprite, setPokeSprite] = useState("");
@@ -32,7 +31,7 @@ const ListaPokeDex = () => {
 	// Copiado en BotonesCambioPagina
 	const [rangoAlto, setRangoAlto] = useState(101)
 	console.log(rangoAlto)
-	const rangoBajo = rangoAlto - 101;
+	const rangoBajo = rangoAlto - 101
 	console.log(rangoBajo) 
 	async function obtenerDatos() {
 		const res = await axios.get(
@@ -78,7 +77,7 @@ const ListaPokeDex = () => {
 			<section id="Principal">
 				<div id="Lista">
 					{/* función de mapeo del grid */}
-					{nombres.slice(0, 101).map((element) => (
+					{nombres.map((element) => (
 						<div id={element.name} key={element.id}>
 							{/* boton detalles */}
 							<button className={`${element.types[0].type.name}Boton`}
@@ -92,7 +91,6 @@ const ListaPokeDex = () => {
 									setPokeAbility(element.abilities[0].ability.name);
 									const pokeHiddenAbility = element.abilities.length > 1 ? element.abilities[1].ability.name : null;
 									setPokeHiddenAbility(pokeHiddenAbility);
-									setPokeBaseEXP(element.base_experience);
 									setPokeHeight(element.height);
 									setPokeWeight(element.weight);
 									setPokeSprite(element.sprites.other['official-artwork'].front_default);
@@ -128,7 +126,7 @@ const ListaPokeDex = () => {
 					}
 				</div>
 				<div id="detalles">
-					{pokeId && pokeName && pokeType && pokeAbility && pokeBaseEXP && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
+					{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
 						<AreaDetalles
 							id={pokeId}
 							name={pokeName}
@@ -141,7 +139,6 @@ const ListaPokeDex = () => {
 							}
 							height={(pokeHeight / 10) + " meters"}
 							weight={(pokeWeight / 10) + " kg"}
-							baseEXP={pokeBaseEXP}
 							sprite={pokeSprite}
 							shinySprite={pokeShinySprite}
 							hp={pokeHp}
@@ -166,7 +163,7 @@ const ListaPokeDex = () => {
 					>PREVIOUS</p>
 				</button>
 				<button id="botonNext">
-					<p onClick={() => {
+					<p onClick={() => {			
 						setRangoAlto((rangoAlto < 1010) ? rangoAlto + 101 : 101);
 						obtenerDatos();
 					}}

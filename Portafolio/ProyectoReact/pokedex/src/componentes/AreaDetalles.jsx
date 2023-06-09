@@ -31,16 +31,18 @@ const AreaDetalles = (props) => {
                     </div>
                 </div>
                 <div id="AreaIntermedia">
-                    <span>Ability:</span>
-                    <span>{props.ability}</span>
-                    <span>Hidden Ability:</span>
-                    <span>{props.hiddenAbility}</span>
-                    <span>Height:</span>
-                    <span>{props.height}</span>
-                    <span>Weight:</span>
-                    <span>{props.weight}</span>
-                    <span>Base EXP:</span>
-                    <span>{props.baseEXP}</span>
+                    <div id="Col1">
+                        <span>Ability:</span>
+                        <span>Hidden Ability:</span>
+                        <span>Height:</span>
+                        <span>Weight:</span>
+                    </div>
+                    <div id="Col2">
+                        <span>{props.ability}</span>
+                        <span>{props.hiddenAbility}</span>
+                        <span>{props.height}</span>
+                        <span>{props.weight}</span>
+                    </div>
                 </div>
                 <div id="Stats">
                     <h3>Pokemon's Stats</h3>

@@ -28,20 +28,22 @@
 }
 
 .NombreYNumero{
-    margin: 0;
     width: 150px;
-    height: 50px;
+    height: 100%;
     color: white;
     font-weight: 900;
     font-size:large;
     text-align: left;
-    vertical-align: middle;
     text-transform: uppercase;
     text-shadow: 1px 1px black;
+    display: flex;
     margin-top: auto;
-    margin-bottom: auto;
+    align-items: center;
+    justify-content: center;
 }
-
+.Sprite{
+    height: 100%;
+}
 .Sprite:hover{
     animation: walk 10s;
     transition: 2;

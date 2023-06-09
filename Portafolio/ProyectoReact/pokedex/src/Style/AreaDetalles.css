@@ -76,16 +76,22 @@
 #AreaIntermedia{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-self: center;
-    margin-top: 3%;
+    margin-top: 5%;
+}
+#Col1, #Col2{
+    display: flex;
+    flex-direction: column;
+}
+#Col1{
+    text-align: right;
+}
+#Col2{
+    Text-align: left;
 }
 #AreaIntermedia span{
-    margin-block-start: 0px;
-    margin-block-end: 0px;
     margin: 1% 13%;
-    text-align: left;
-    width: 80%;
-    border-bottom: 2px solid #0000009a;
+    border-bottom: 2px solid black;
+    width: 75%;
 }
 #Stats{
     display: flex;
