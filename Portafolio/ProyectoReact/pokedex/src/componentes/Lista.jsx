@@ -28,48 +28,48 @@ const ListaPokeDex = () => {
 	const [title, setTitle] = useState(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
 
 
-	// Copiado en BotonesCambioPagina
-	const [rangoAlto, setRangoAlto] = useState(101)
-	console.log(rangoAlto)
-	const rangoBajo = rangoAlto - 101
-	console.log(rangoBajo) 
-	async function obtenerDatos() {
-		const res = await axios.get(
-			`https://pokeapi.co/api/v2/pokemon/?offset=${rangoBajo}&limit=${rangoAlto}`
-		);
-		console.log(res.data.results);
+
+	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101`);
+	const [next1, setNext1] = useState("");
+	const [previus1, setPrevius1] = useState("");
+	async function listaDeNombres() {
+		const res = await axios.get(url);
+		// console.log(res.data.results);
 		setPokemon(res.data.results);
+		setNext1(res.data.next);
+		// console.log("next:" + next1);
+		setPrevius1(res.data.previous);
+		console.log("previus:" + previus1);
+		console.log("url es:" + url);
 	}
-	async function obtenerNombres() {
+	async function datosPokemon() {
 		try {
 			const results = await Promise.all(
 				pokemon.map(async pokemon => {
 					try {
-						const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
-						console.log(res.data);
+						const res = await axios.get(`
+						https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
+						// console.log(res.data);
 						return res.data;
 					} catch (error) {
 						console.error('Error fetching data for', pokemon.name, error);
-						throw error;
 					}
 				})
 			);
-			console.log(results);
+			// console.log(results);
 			setNombres(results);
 		} catch (error) {
 			console.error('Error fetching pokemon names:', error);
 		}
 	}
 	useEffect(() => {
-		obtenerDatos();
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [rangoAlto]);
+		listaDeNombres();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [url, next1]);
 	useEffect(() => {
-		if (pokemon.length > 0) {
-			obtenerNombres();
-		}
+		datosPokemon();
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [pokemon.length]);
+	}, [url, next1]);
 
 	return (
 		<main id="Body">
@@ -154,20 +154,36 @@ const ListaPokeDex = () => {
 				</div>
 			</section>
 			<section id="BotonesCambioPagina">
-				<button id="botonPrevious">
-					<p onClick={() => {
-						const nuevoRangoAlto = rangoAlto === 101 ? 1010 : rangoAlto - 101;
-						setRangoAlto(nuevoRangoAlto);
-						obtenerDatos();
-					}}
-					>PREVIOUS</p>
+				<button id="botonPrevious"
+				onClick={() => {
+					switch (previus1) {
+						case null:
+							setUrl('https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=61');
+							break;
+						case "https://pokeapi.co/api/v2/pokemon/?offset=1151&limit=61":
+							setUrl("https://pokeapi.co/api/v2/pokemon/?offset=1111&limit=101");
+							break;
+						default: setUrl(previus1);
+					}
+				}}>
+					<p>PREVIOUS</p>
 				</button>
-				<button id="botonNext">
-					<p onClick={() => {			
-						setRangoAlto((rangoAlto < 1010) ? rangoAlto + 101 : 101);
-						obtenerDatos();
-					}}
-					>NEXT</p>
+				<button id="botonNext"
+				onClick={() => { 
+					switch (next1) {
+						case null:
+							setUrl('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101');
+							break;
+						case "https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=69":
+							setUrl("https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=61");
+							break;
+						case "https://pokeapi.co/api/v2/pokemon/?offset=1273&limit=8":
+							setUrl("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101");
+							break;
+						default: setUrl(next1);
+					}
+				}}>
+					<p>NEXT</p>
 				</button>
 			</section>
 		</main>
