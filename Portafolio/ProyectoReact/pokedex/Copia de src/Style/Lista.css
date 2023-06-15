@@ -1,29 +1,32 @@
+#Body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 #Principal{
+    width: 98vw;
     display: grid;
     grid-template-columns: repeat(9, minmax(0, 1fr));
-    width: 90vw;
-    margin-left: 10vw;
-    padding-top: 5px;
+    justify-self: center;
     background-color: #b13241e6;
+    margin-top: 6.5rem;
+    gap: 4px;
+    z-index: 1;
 }
+
 #Lista{
     grid-column: span 5;
-    margin-left: 10px;
 }
-#detalles{
-    position: fixed;
-    width: 70vh;
-    height: 100vh;
-    z-index: 1;
-    left: 61vw;
-    overflow: auto;
-    background-color: #0000009a;
+
+.Pokemon{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-around;
+    margin: 0px;
 }
-h1{
-    text-align: center;
-    text-transform: capitalize;
-    margin: 60% 0%;
-}
+
 .NombreYNumero{
     width: 150px;
     height: 100%;
@@ -46,6 +49,7 @@ h1{
     transition: 2;
     z-index: 1;
 }
+
 @keyframes walk {
     0% {
         transform: translateX(0px);
@@ -111,10 +115,28 @@ h1{
         transform: translateY(0px)
     }
 }
+
 .DivTipos{
     margin-top: auto;
     margin-bottom: auto;
     gap: 2px;
     display: flex;
     flex-direction: column;
+}
+
+#detalles{
+    column-span: 4;
+    z-index: -1;
+    background-color: #0000009a;
+    width: 42vw;
+    position: fixed;
+    left: 56.5vw;
+    height: 84vh;
+    overflow: auto;
+    border: black 3px solid;
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 50% 0%;
 }

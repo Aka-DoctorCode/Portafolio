@@ -1,14 +1,29 @@
-#Menu{
-    width: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
+#Menu, #BotonesCambioPagina{
     display: flex;
+    flex-direction: column;
     position: fixed;
-    justify-self: center;
-    background-color: #D42C3F;
+    width: 10vw;
+    z-index: 3;
+    margin: 0px;
+    padding: 0px;
+}
+#menu{
+    height: auto;
+}
+#BotonesCambioPagina{
+    justify-content: flex-end;
+    height: 100vh;
     z-index: 2;
+    background-color: #D42C3F;
+    border-right: black 5px solid;
 }
 #boton, #botonClose, #botonPrevious, #botonNext{
+    width: auto;
+    height: 125px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
     background: #168106;
     border: 1px;
     border-width: 2px;
@@ -22,38 +37,6 @@
     text-transform: uppercase;
     text-align: center;
     text-shadow: 1px 1px black;
-}
-#boton, #botonClose{
-    width: 100%;
-    height: 32px;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-#botonClose{
-    width: 20vw;
-    margin-right: 10px;}
-#BotonesCambioPagina{
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-}
-#botonPrevious, #botonNext{
-    width: 2.5rem;
-    height: 88vh;
-    margin-top: 2.9rem;
-}
-#botonPrevious{
-    margin-left: 15px;
-}
-#botonNext{
-    margin-right: 15px;
-}
-#botonPrevious p{
-    rotate: -90deg;
-}
-#botonNext p{
-    rotate: 90deg;
 }
 #boton:active, #botonClose:active, #botonPrevious:active, #botonNext:active{
     transform: translateY(3px) translateX(2px);

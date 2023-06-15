@@ -1,0 +1,154 @@
+.fireBoton{background-color: #F08030;}
+.normalBoton{background-color: #a8a878;}
+.waterBoton{background-color: #6890F0;}
+.electricBoton{background-color: #F8D030;}
+.grassBoton{background-color: #78C850;}
+.bugBoton{background-color: #A8B820;}
+.flyingBoton{background-color: #A890F0;}
+.fightingBoton{background-color: #C03028;}
+.iceBoton{background-color: #98D8D8;}
+.rockBoton{background-color: #B8A038;}
+.groundBoton{background-color: #E0C068;}
+.poisonBoton{background-color: #A040A0;}
+.psychicBoton{background-color: #F85888;}
+.ghostBoton{background-color: #705898;}
+.dragonBoton{background-color: #7038F8;}
+.darkBoton{background-color: #705848;}
+.steelBoton{background-color: #B8B8D0;}
+.fairyBoton{background-color: #F0B6Bc;}
+
+.fireBoton, .normalBoton, .waterBoton, .electricBoton, .grassBoton, .bugBoton, .flyingBoton, .fightingBoton, .iceBoton, .rockBoton, .groundBoton, .poisonBoton, .psychicBoton, .ghostBoton, .dragonBoton, .darkBoton, .steelBoton, .fairyBoton{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 100%;
+    height: 130px;
+    border: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 1px 2px black;
+    transition: 0.8s;
+}
+
+.fireBoton:hover{background-color: #d37029;}
+.normalBoton:hover{background-color: #8b8b59;}
+.waterBoton:hover{background-color: #4f76d1;}
+.electricBoton:hover{background-color: #d9b628;}
+.grassBoton:hover{background-color: #64a942;}
+.bugBoton:hover{background-color: #869318;}
+.flyingBoton:hover{background-color: #8c75d0;}
+.fightingBoton:hover{background-color: #9b2620;}
+.iceBoton:hover{background-color: #79bbbb;}
+.rockBoton:hover{background-color: #93802c;}
+.groundBoton:hover{background-color: #bea253;}
+.poisonBoton:hover{background-color: #7b307b;}
+.psychicBoton:hover{background-color: #d04870;}
+.ghostBoton:hover{background-color: #584477;}
+.dragonBoton:hover{background-color: #612fd5;}
+.darkBoton:hover{background-color: #513f33;}
+.steelBoton:hover{background-color: #9b9bad;}
+.fairyBoton:hover{background-color: #d59da2;}
+
+.fireBoton:hover, .normalBoton:hover, .waterBoton:hover, .electricBoton:hover, .grassBoton:hover, .bugBoton:hover, .flyingBoton:hover, .fightingBoton:hover, .iceBoton:hover, .rockBoton:hover, .groundBoton:hover, .poisonBoton:hover, .psychicBoton:hover, .ghostBoton:hover, .dragonBoton:hover, .darkBoton:hover, .steelBoton:hover, .fairyBoton:hover{
+    transform: translateX(30px) scale(1.1);
+    transition: 0.5s;
+    justify-self: center;
+}
+
+.normal{background-color: #a8a878;}
+.fire{background-color: #F08030;}
+.water{background-color: #6890F0;}
+.electric{background-color: #F8D030;}
+.grass{background-color: #78C850;}
+.bug{background-color: #A8B820;}
+.flying{background-color: #A890F0;}
+.fighting{background-color: #C03028;}
+.ice{background-color: #98D8D8;}
+.rock{background-color: #B8A038;}
+.ground{background-color: #E0C068;}
+.poison{background-color: #A040A0;}
+.psychic{background-color: #F85888;}
+.ghost{background-color: #705898;}
+.dragon{background-color: #7038F8;}
+.dark{background-color: #705848;}
+.steel{background-color: #B8B8D0;}
+.fairy{background-color: #F0B6BC;}
+
+.fire, .normal, .water, .electric, .grass, .bug, .flying, .fighting, .ice, .rock, .ground, .poison, .psychic, .ghost, .dragon, .dark, .steel, .fairy{
+    width: 115px;
+    margin: 4px;
+    padding: 5px;
+    border: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    box-shadow: 2px 4px black;
+    color: white;
+    font-weight: 700;
+    font-size:large;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px black;
+}
+
+/* .normal1{background-color: #a8a878;}
+.fire1{background-color: #F08030;}
+.water1{background-color: #6890F0;}
+.electric1{background-color: #F8D030;}
+.grass1{background-color: #78C850;}
+.bug1{background-color: #A8B820;}
+.flying1{background-color: #A890F0;}
+.fighting1{background-color: #C03028;}
+.ice1{background-color: #98D8D8;}
+.rock1{background-color: #B8A038;}
+.ground1{background-color: #E0C068;}
+.poison1{background-color: #A040A0;}
+.psychic1{background-color: #F85888;}
+.ghost1{background-color: #705898;}
+.dragon1{background-color: #7038F8;}
+.dark1{background-color: #705848;}
+.steel1{background-color: #B8B8D0;}
+.fairy1{background-color: #F0B6BC;}
+ */
+
+/* .fire1, .normal1, .water1, .electric1, .grass1, .bug1, .flying1, .fighting1, .ice1, .rock1, .ground1, .poison1, .psychic1, .ghost1, .dragon1, .dark1, .steel1, .fairy1{
+    width: 43%;
+    height: 91%;
+    margin-top: -115px;
+    margin-left: 49%;
+    z-index: 2;
+    border: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px black;
+} */
+
+/* #fire1, #normal1, #water1, #electric1, #grass1, #bug1, #flying1, #fighting1, #ice1, #rock1, #ground1, #poison1, #psychic1, #ghost1, #dragon1, #dark1, #steel1, #fairy1{
+    display: flex;
+    width: 43%;
+    margin-left: 49%;
+    justify-content: space-around;
+    margin: 5px;
+    border: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 1px 2px black;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px black;
+} */

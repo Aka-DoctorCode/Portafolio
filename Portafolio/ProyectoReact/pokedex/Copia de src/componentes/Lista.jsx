@@ -27,10 +27,11 @@ const ListaPokeDex = () => {
 	const [pokeSpeed, setPokeSpeed] = useState("");
 	const [title, setTitle] = useState(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
 
+
+
 	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101`);
 	const [next1, setNext1] = useState("");
 	const [previus1, setPrevius1] = useState("");
-
 	async function listaDeNombres() {
 		const res = await axios.get(url);
 		// console.log(res.data.results);
@@ -41,7 +42,6 @@ const ListaPokeDex = () => {
 		console.log("previus:" + previus1);
 		console.log("url es:" + url);
 	}
-
 	async function datosPokemon() {
 		try {
 			const results = await Promise.all(
@@ -86,7 +86,7 @@ const ListaPokeDex = () => {
 						default: setUrl(previus1);
 					}
 				}}>
-					<p>PREVIOUS</p>
+					<span>PREVIOUS</span>
 				</button>
 				<button id="botonNext"
 				onClick={() => { 
@@ -103,7 +103,7 @@ const ListaPokeDex = () => {
 						default: setUrl(next1);
 					}
 				}}>
-					<p>NEXT</p>
+					<span>NEXT</span>
 				</button>
 			</section>
 			{/* Delimitar el componente lista */}

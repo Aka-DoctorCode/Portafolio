@@ -1,0 +1,100 @@
+.Sprites{
+    width: 100%;
+}
+.firedetalles, .normaldetalles, .waterdetalles, .electricdetalles, .grassdetalles, .bugdetalles, .flyingdetalles, .fightingdetalles, .icedetalles, .rockdetalles, .grounddetalles, .poisondetalles, .psychicdetalles, .ghostdetalles, .dragondetalles, .darkdetalles, .steeldetalles, .fairydetalles{
+    width: auto;
+    height: auto;
+    margin: 4px; 
+    padding: 5px;
+    border: 1px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #0000009a;
+    color: white;
+    font-weight: 700;
+    font-size:large;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 1px 1px black;
+}
+.normaldetalles{background-color: #a8a878;}
+.firedetalles{background-color: #F08030;}
+.waterdetalles{background-color: #6890F0;}
+.electricdetalles{background-color: #F8D030;}
+.grassdetalles{background-color: #78C850;}
+.bugdetalles{background-color: #A8B820;}
+.flyingdetalles{background-color: #A890F0;}
+.fightingdetalles{background-color: #C03028;}
+.icedetalles{background-color: #98D8D8;}
+.rockdetalles{background-color: #B8A038;}
+.grounddetalles{background-color: #E0C068;}
+.poisondetalles{background-color: #A040A0;}
+.psychicdetalles{background-color: #F85888;}
+.ghostdetalles{background-color: #705898;}
+.dragondetalles{background-color: #7038F8;}
+.darkdetalles{background-color: #705848;}
+.steeldetalles{background-color: #B8B8D0;}
+.fairydetalles{background-color: #F0B6BC;}
+
+#AreaSuperior{
+    display: flex;
+    flex-direction: column;
+    background-color: #0000009a;
+    border: rgb(0, 0, 0);
+    box-shadow: 1px 1px black;    
+    border-radius: 5%;
+    border-style:inherit;
+    border-width: 4px;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: -2%;
+}
+#cabecera{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: -3%;
+    margin-top: -3%;
+}
+#imagenes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#Shiny, #Normal{
+    justify-self: center;
+    align-self: center;
+}
+#tipo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+    margin-top: -3%;
+}
+#AreaIntermedia{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5%;
+}
+#Col1, #Col2{
+    display: flex;
+    flex-direction: column;
+}
+#Col1{
+    text-align: right;
+}
+#Col2{
+    Text-align: left;
+}
+#AreaIntermedia span{
+    margin: 1% 13%;
+    border-bottom: 2px solid black;
+    width: 75%;
+}
+#Stats{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
