@@ -68,7 +68,7 @@ const ListaPokeDex = () => {
 	}, [url, next1]);
 	useEffect(() => {
 		datosPokemon();
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [url, next1]);
 
 	return (
@@ -158,33 +158,34 @@ const ListaPokeDex = () => {
 					))
 					}
 				</div>
-				<div id="detalles">
-					{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
-						<AreaDetalles
-							id={pokeId}
-							name={pokeName}
-							types={pokeType}
-							type2={pokeType2}
-							ability={pokeAbility}
-							hiddenAbility={(pokeHiddenAbility) 
-								? (pokeHiddenAbility) 
-								: "No Hidden Ability"
-							}
-							height={(pokeHeight / 10) + " meters"}
-							weight={(pokeWeight / 10) + " kg"}
-							sprite={pokeSprite}
-							shinySprite={pokeShinySprite}
-							hp={pokeHp}
-							atk={pokeAtk}
-							def={pokeDef}
-							spAtk={pokeSpAtk}
-							spDef={pokeSpDef}
-							speed={pokeSpeed}
-							Title= {null}
-						/>
-					) :	title
-					}
-				</div>
+				<section id="AreaDetalles">
+					<div id="detalles">
+						{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
+							<AreaDetalles
+								id={pokeId}
+								name={pokeName}
+								types={pokeType}
+								type2={pokeType2}
+								ability={pokeAbility}
+								hiddenAbility={(pokeHiddenAbility) 
+									? (pokeHiddenAbility) 
+									: "None"}
+								height={(pokeHeight / 10) + " meters"}
+								weight={(pokeWeight / 10) + " kg"}
+								sprite={pokeSprite}
+								shinySprite={pokeShinySprite}
+								hp={pokeHp}
+								atk={pokeAtk}
+								def={pokeDef}
+								spAtk={pokeSpAtk}
+								spDef={pokeSpDef}
+								speed={pokeSpeed}
+								Title= {null}
+							/>
+						) :	title
+						}
+					</div>
+				</section>
 			</section>
 		</main>
 	);

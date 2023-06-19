@@ -16,9 +16,9 @@ const AreaDetalles = (props) => {
                         <p>{props.name}</p>
                     </div>
                     <div id="imagenes">
-                        <div>
-                            <button onClick={hadleClickNormal}>Normal</button>
-                            <button onClick={hadleClickShiny}>Shiny</button>
+                        <div  >
+                            <button className="SpriteSelector" onClick={hadleClickNormal}>Normal</button>
+                            <button className="SpriteSelector" onClick={hadleClickShiny}>Shiny</button>
                         </div>
                         {Normal 
                             ? (<img id='Normal' src={props.sprite} className="Sprites" alt="" srcset="" />)

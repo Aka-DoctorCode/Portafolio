@@ -16,7 +16,6 @@
     font-size:large;
     text-align: center;
     text-transform: capitalize;
-    text-shadow: 1px 1px black;
 }
 .normaldetalles{background-color: #a8a878;}
 .firedetalles{background-color: #F08030;}
@@ -62,6 +61,19 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
+}
+.SpriteSelector{
+    border: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 2px 4px black;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    font-size:large;
+    text-transform: uppercase;
+    text-align: center;
 }
 #Shiny, #Normal{
     justify-self: center;

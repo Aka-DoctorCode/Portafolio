@@ -3,12 +3,17 @@
     grid-template-columns: repeat(9, minmax(0, 1fr));
     width: 90vw;
     margin-left: 10vw;
-    padding-top: 5px;
     background-color: #b13241e6;
 }
 #Lista{
     grid-column: span 5;
     margin-left: 10px;
+}
+#AreaDetalles{
+    border-left: black 5px solid;
+    margin-left: 8px;
+    z-index: 1;
+    background-color: #b13241;
 }
 #detalles{
     position: fixed;

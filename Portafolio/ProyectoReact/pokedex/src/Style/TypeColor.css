@@ -51,9 +51,26 @@
 .darkBoton:hover{background-color: #513f33;}
 .steelBoton:hover{background-color: #9b9bad;}
 .fairyBoton:hover{background-color: #d59da2;}
-
+/* .fireSpriteSelector,
+.normalSpriteSelector,
+.waterSpriteSelector,
+.electricSpriteSelector,
+.grassSpriteSelector,
+.bugSpriteSelector,
+.flyingSpriteSelector,
+.fightingSpriteSelector,
+.iceSpriteSelector,
+.rockSpriteSelector,
+.groundSpriteSelector,
+.poisonSpriteSelector,
+.psychicSpriteSelector,
+.ghostSpriteSelector,
+.dragonSpriteSelector,
+.darkSpriteSelector,
+.steelSpriteSelector,
+.fairySpriteSelector, */
 .fireBoton:hover, .normalBoton:hover, .waterBoton:hover, .electricBoton:hover, .grassBoton:hover, .bugBoton:hover, .flyingBoton:hover, .fightingBoton:hover, .iceBoton:hover, .rockBoton:hover, .groundBoton:hover, .poisonBoton:hover, .psychicBoton:hover, .ghostBoton:hover, .dragonBoton:hover, .darkBoton:hover, .steelBoton:hover, .fairyBoton:hover{
-    transform: translateX(30px) scale(1.1);
+    transform: scale(1.2);
     transition: 0.5s;
     justify-self: center;
 }
