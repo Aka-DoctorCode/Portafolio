@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import '../Style/AreaDetalles.css'
-// import "../Style/TypeColor.css"
-
 
 const AreaDetalles = (props) => {
     const [Normal, setNormal] = useState(true);
@@ -10,6 +8,7 @@ const AreaDetalles = (props) => {
     return (
         <div>
             <div className={`${props.types}detalles`}>
+            <div><button id="CloseX" onClick={() => props.clearData()}>X</button></div>
                 <div id="AreaSuperior">
                     <div id="cabecera">
                         <p>#&nbsp;&nbsp;{props.id}.</p>
@@ -46,13 +45,32 @@ const AreaDetalles = (props) => {
                 </div>
                 <div id="Stats">
                     <h3>Pokemon's Stats</h3>
-                    <span>HP: {props.hp}</span>
-                    <span>ATK: {props.atk}</span>
-                    <span>Def: {props.def}</span>
-                    <span>SPATK:{props.spAtk}</span>
-                    <span>SPDEF: {props.spDef}</span>
-                    <span>Speed: {props.speed}</span>
+                    <div className="StatsDiv">
+                        <span>HP: {props.hp}/255</span>
+                        <div className="Statsbar" style={{ "--percent": props.hp}}></div>
+                    </div>
+                    <div className="StatsDiv">
+                        <span>ATK: {props.atk}/255</span>
+                        <div className="Statsbar" style={{ "--percent": props.atk}}></div>
+                    </div>
+                    <div className="StatsDiv">
+                        <span>Def: {props.def}/255</span>
+                        <div className="Statsbar" style={{ "--percent": props.def}}></div>
+                    </div>
+                    <div className="StatsDiv">
+                        <span>SPATK:{props.spAtk}/255</span>
+                        <div className="Statsbar" style={{ "--percent": props.spAtk}}></div>
+                    </div>
+                    <div className="StatsDiv">
+                        <span>SPDEF: {props.spDef}/255</span>
+                        <div className="Statsbar" style={{ "--percent": props.spDef}}></div>
+                    </div>
+                    <div className="StatsDiv">
+                        <span>Speed: {props.speed}/255</span>
+                        <div className="Statsbar" style={{ "--percent": props.speed}}></div>
+                    </div>
                 </div>
+                <button id="Close" onClick={() => props.clearData()}>Close</button>
             </div>
         </div>
     );

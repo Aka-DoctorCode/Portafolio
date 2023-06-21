@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .Main{
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@
 }
 #Lista{
     grid-column: span 5;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 #AreaDetalles{
     border-left: black 5px solid;
@@ -23,8 +23,9 @@
     left: 61vw;
     overflow: auto;
     background-color: #0000009a;
+    border-right: black 5px solid;
 }
-h1{
+.Cargar{
     text-align: center;
     text-transform: capitalize;
     margin: 60% 0%;
@@ -37,7 +38,7 @@ h1{
     font-size:large;
     text-align: left;
     text-transform: uppercase;
-    text-shadow: 1px 1px black;
+    text-shadow: 2px 2px black;
     display: flex;
     margin-top: auto;
     align-items: center;
@@ -48,8 +49,8 @@ h1{
 }
 .Sprite:hover{
     animation: walk 10s;
-    transition: 2;
-    z-index: 1;
+    /* transition: 2; */
+    /* z-index: 1; */
 }
 @keyframes walk {
     0% {

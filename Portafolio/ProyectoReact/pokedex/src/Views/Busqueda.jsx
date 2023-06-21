@@ -1,7 +1,7 @@
 const Busqueda = () => {
     return ( 
-        <main className="mt-10">
-            <h1>Serach for a Pokemon</h1>
+        <main id="Busqueda">  
+            <h1 className="title">Serach for a Pokemon</h1>
             <p>input pokemon's name or number</p>
             <div>
                 <input type="Name or Number" />

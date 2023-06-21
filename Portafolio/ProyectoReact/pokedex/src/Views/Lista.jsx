@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AreaDetalles from "./AreaDetalles"
+import AreaDetalles from "../Components/AreaDetalles"
 import "../Style/TypeColor.css"
 import "../Style/Lista.css"
 
@@ -27,11 +27,30 @@ const ListaPokeDex = () => {
 	const [pokeSpeed, setPokeSpeed] = useState("");
 	const [title, setTitle] = useState(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
 
-
+	async function clearData() {
+		setPokeId("");
+		setPokeName("");
+		setPokeType("");
+		setPokeType2("");
+		setPokeAbility("");
+		setPokeHiddenAbility("");
+		setPokeHeight("");
+		setPokeWeight("");
+		setPokeSprite("");
+		setPokeShinySprite("");
+		setPokeHp("");
+		setPokeAtk("");
+		setPokeDef("");
+		setPokeSpAtk("");
+		setPokeSpDef("");
+		setPokeSpeed("");
+		setTitle(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
+	}
 
 	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101`);
 	const [next1, setNext1] = useState("");
 	const [previus1, setPrevius1] = useState("");
+
 	async function listaDeNombres() {
 		const res = await axios.get(url);
 		// console.log(res.data.results);
@@ -42,6 +61,7 @@ const ListaPokeDex = () => {
 		console.log("previus:" + previus1);
 		console.log("url es:" + url);
 	}
+
 	async function datosPokemon() {
 		try {
 			const results = await Promise.all(
@@ -68,13 +88,13 @@ const ListaPokeDex = () => {
 	}, [url, next1]);
 	useEffect(() => {
 		datosPokemon();
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [url, next1]);
 
 	return (
 		<main id="Body">
 			<section id="BotonesCambioPagina">
-				<button id="botonPrevious"
+				<button id="botonCambio"
 				onClick={() => {
 					switch (previus1) {
 						case null:
@@ -86,9 +106,9 @@ const ListaPokeDex = () => {
 						default: setUrl(previus1);
 					}
 				}}>
-					<span>PREVIOUS</span>
+					<p>PREVIOUS</p>
 				</button>
-				<button id="botonNext"
+				<button id="botonCambio"
 				onClick={() => { 
 					switch (next1) {
 						case null:
@@ -103,7 +123,7 @@ const ListaPokeDex = () => {
 						default: setUrl(next1);
 					}
 				}}>
-					<span>NEXT</span>
+					<p>NEXT</p>
 				</button>
 			</section>
 			{/* Delimitar el componente lista */}
@@ -158,33 +178,35 @@ const ListaPokeDex = () => {
 					))
 					}
 				</div>
-				<div id="detalles">
-					{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
-						<AreaDetalles
-							id={pokeId}
-							name={pokeName}
-							types={pokeType}
-							type2={pokeType2}
-							ability={pokeAbility}
-							hiddenAbility={(pokeHiddenAbility) 
-								? (pokeHiddenAbility) 
-								: "No Hidden Ability"
-							}
-							height={(pokeHeight / 10) + " meters"}
-							weight={(pokeWeight / 10) + " kg"}
-							sprite={pokeSprite}
-							shinySprite={pokeShinySprite}
-							hp={pokeHp}
-							atk={pokeAtk}
-							def={pokeDef}
-							spAtk={pokeSpAtk}
-							spDef={pokeSpDef}
-							speed={pokeSpeed}
-							Title= {null}
-						/>
-					) :	title
-					}
-				</div>
+				<section id="AreaDetalles">
+					<div id="detalles">
+						{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
+							<AreaDetalles
+								id={pokeId}
+								name={pokeName}
+								types={pokeType}
+								type2={pokeType2}
+								ability={pokeAbility}
+								hiddenAbility={(pokeHiddenAbility) 
+									? (pokeHiddenAbility) 
+									: "None"}
+								height={(pokeHeight / 10) + " meters"}
+								weight={(pokeWeight / 10) + " kg"}
+								sprite={pokeSprite}
+								shinySprite={pokeShinySprite}
+								hp={pokeHp}
+								atk={pokeAtk}
+								def={pokeDef}
+								spAtk={pokeSpAtk}
+								spDef={pokeSpDef}
+								speed={pokeSpeed}
+								Title= {null}
+								clearData={clearData}
+							/>
+						) :	title
+						}
+					</div>
+				</section>
 			</section>
 		</main>
 	);

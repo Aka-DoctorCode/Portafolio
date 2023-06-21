@@ -1,0 +1,10 @@
+#Busqueda{
+    display: flex;
+    align-content: center;
+    width: 90vw;
+    margin-left: 10vw;
+}
+.title{
+    width: 90vw;
+    left: 10vw;
+}
