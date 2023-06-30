@@ -17,7 +17,10 @@
 }
 #detalles{
     position: fixed;
-    width: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 74vh;
     height: 100vh;
     z-index: 1;
     left: 61vw;
@@ -25,10 +28,14 @@
     background-color: #0000009a;
     border-right: black 5px solid;
 }
-.Cargar{
+#Cargar{
     text-align: center;
     text-transform: capitalize;
-    margin: 60% 0%;
+    color: white;
+    font-size: 3rem;
+    font-weight: bolder;
+    font-family: system-ui;
+    text-shadow: 1px 1px black;
 }
 .NombreYNumero{
     width: 150px;

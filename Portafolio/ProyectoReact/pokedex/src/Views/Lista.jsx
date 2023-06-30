@@ -3,6 +3,7 @@ import axios from "axios";
 import AreaDetalles from "../Components/AreaDetalles"
 import "../Style/TypeColor.css"
 import "../Style/Lista.css"
+import pokeball from "../Images/pokeball1.png"
 
 const ListaPokeDex = () => {
 	const [pokemon, setPokemon] = useState([]);
@@ -25,7 +26,7 @@ const ListaPokeDex = () => {
 	const [pokeSpAtk, setPokeSpAtk] = useState("");
 	const [pokeSpDef, setPokeSpDef] = useState("");
 	const [pokeSpeed, setPokeSpeed] = useState("");
-	const [title, setTitle] = useState(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
+	const [title, setTitle] = useState(<h1 id="Cargar">Click on any Pokemon to get more information</h1>);
 
 	async function clearData() {
 		setPokeId("");
@@ -44,7 +45,7 @@ const ListaPokeDex = () => {
 		setPokeSpAtk("");
 		setPokeSpDef("");
 		setPokeSpeed("");
-		setTitle(<h1 className="Cargar">Click on any Pokémon to get more information</h1>);
+		setTitle(<h1 id="Cargar">Click on any Pokemon to get more information</h1>);
 	}
 
 	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101`);
@@ -58,8 +59,8 @@ const ListaPokeDex = () => {
 		setNext1(res.data.next);
 		// console.log("next:" + next1);
 		setPrevius1(res.data.previous);
-		console.log("previus:" + previus1);
-		console.log("url es:" + url);
+		// console.log("previus:" + previus1);
+		// console.log("url es:" + url);
 	}
 
 	async function datosPokemon() {
@@ -136,25 +137,31 @@ const ListaPokeDex = () => {
 							<button className={`${element.types[0].type.name}Boton`}
 								// función onClick para mostrar detalles
 								onClick={() => {
-									setPokeName(element.name);
+									clearData();
+									setTitle("");
+									async function detalles () {
 									setPokeId(element.id);
+									setPokeName(element.name);
 									setPokeType(element.types[0].type.name);
 									const pokeType2 = element.types.length > 1 ? element.types[1].type.name : null;
 									setPokeType2(pokeType2);
 									setPokeAbility(element.abilities[0].ability.name);
-									const pokeHiddenAbility = element.abilities.length > 1 ? element.abilities[1].ability.name : null;
+									const pokeHiddenAbility = element.abilities.length > 1 ? element.abilities[1].ability.name : "None";
 									setPokeHiddenAbility(pokeHiddenAbility);
 									setPokeHeight(element.height);
 									setPokeWeight(element.weight);
 									setPokeSprite(element.sprites.other['official-artwork'].front_default);
+
 									setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny);
+
+
 									setPokeHp(element.stats[0].base_stat);
 									setPokeAtk(element.stats[1].base_stat);
 									setPokeDef(element.stats[2].base_stat);
 									setPokeSpAtk(element.stats[3].base_stat);
 									setPokeSpDef(element.stats[4].base_stat);
 									setPokeSpeed(element.stats[5].base_stat);
-									setTitle("");
+									} setTimeout(detalles, 10);
 								}}>
 								{/* texto de número y nombre */}
 								<p className="NombreYNumero" >
@@ -163,7 +170,7 @@ const ListaPokeDex = () => {
 									{element.name}
 								</p>
 								{/* sprite */}
-								<img className="Sprite" src={element.sprites.front_default} alt={`${element.name}'s Sprite`} />
+								<img className="Sprite" src={(element.sprites.front_default) ? element.sprites.front_default : pokeball} alt="sprite" />
 								{/* div de tipos */}
 								<div className="DivTipos">
 									{/* función de mapeo de tipos */}
@@ -187,9 +194,7 @@ const ListaPokeDex = () => {
 								types={pokeType}
 								type2={pokeType2}
 								ability={pokeAbility}
-								hiddenAbility={(pokeHiddenAbility) 
-									? (pokeHiddenAbility) 
-									: "None"}
+								hiddenAbility={pokeHiddenAbility}
 								height={(pokeHeight / 10) + " meters"}
 								weight={(pokeWeight / 10) + " kg"}
 								sprite={pokeSprite}

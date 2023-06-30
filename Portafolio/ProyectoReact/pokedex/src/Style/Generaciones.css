@@ -1,0 +1,16 @@
+#GenInfo{
+    width: 90vw;
+    height: 100vh;
+    margin-left: 20vh;
+}
+#Generaciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    margin-right: 20px;
+    padding-left: 3px;
+    left: 71vw;
+    border-left: solid black 5px;
+}

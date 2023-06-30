@@ -42,14 +42,14 @@ function App() {
     <div className='Main'>
       <img className={AloSpeed} src={Alo} alt='Alo'/>
       <button className={Centro} onClick={activate}>
-        <p id='principal' className={Carga}>{Pokedex}</p>
+        <span id='principal' className={Carga}>{Pokedex}</span>
         {/* <p id='secundario' className={Carga}>{Puntos}</p> */}
         <div id='secundario'>
-          <p id='punto1'>{punto}</p>
-          <p id='punto2'>{punto}</p>
-          <p id='punto3'>{punto}</p>
-          <p id='punto4'>{punto}</p>
-          <p id='punto5'>{punto}</p>
+          <span id='punto1'>{punto}</span>
+          <span id='punto2'>{punto}</span>
+          <span id='punto3'>{punto}</span>
+          <span id='punto4'>{punto}</span>
+          <span id='punto5'>{punto}</span>
         </div>
       </button>
     </div>

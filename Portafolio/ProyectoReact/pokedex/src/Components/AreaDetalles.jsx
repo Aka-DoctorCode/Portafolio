@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../Style/AreaDetalles.css'
 
 const AreaDetalles = (props) => {
     const [Normal, setNormal] = useState(true);
-    const hadleClickNormal = () => {setNormal(true);};
-    const hadleClickShiny = () => {setNormal(false);};
+    const [botonPress, setBotonPress] = useState('press');
+    const [shinyPress, setShinyPress] = useState('');
+    const [vida, setVida] = useState(props.hp);
+        const hadleClickNormal = () => {
+        setNormal(true);
+        setBotonPress('press');
+        setShinyPress('');
+    };
+    const hadleClickShiny = () => {
+        setNormal(false);
+        setShinyPress('press');
+        setBotonPress('');
+    }
     return (
         <div>
             <div className={`${props.types}detalles`}>
@@ -15,9 +26,9 @@ const AreaDetalles = (props) => {
                         <p>{props.name}</p>
                     </div>
                     <div id="imagenes">
-                        <div  >
-                            <button className="SpriteSelector" onClick={hadleClickNormal}>Normal</button>
-                            <button className="SpriteSelector" onClick={hadleClickShiny}>Shiny</button>
+                        <div>
+                            <button className="SpriteSelector" id={botonPress} onClick={hadleClickNormal}>Normal</button>
+                            <button className="SpriteSelector" id={shinyPress} onClick={hadleClickShiny}>Shiny</button>
                         </div>
                         {Normal 
                             ? (<img id='Normal' src={props.sprite} className="Sprites" alt="" srcset="" />)
@@ -46,8 +57,8 @@ const AreaDetalles = (props) => {
                 <div id="Stats">
                     <h3>Pokemon's Stats</h3>
                     <div className="StatsDiv">
-                        <span>HP: {props.hp}/255</span>
-                        <div className="Statsbar" style={{ "--percent": props.hp}}></div>
+                        <span>HP: {vida}/255</span>
+                        <div className="Statsbar" style={{ "--percent": vida}}></div>
                     </div>
                     <div className="StatsDiv">
                         <span>ATK: {props.atk}/255</span>

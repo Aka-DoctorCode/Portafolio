@@ -19,12 +19,11 @@
     top: 71.3vh;
     z-index: 3;
 }
-#boton, #botonClose, #botonCambio{
+#boton, #botonClose, #botonCambio, .GenBoton{
     width: 105px;
     height: 90px;
     margin-bottom: 8px;
     margin-top: 2px;
-    background: #168106;
     border: 1px;
     border-width: 2px;
     border-style: solid;
@@ -38,13 +37,19 @@
     text-align: center;
     text-shadow: 2px 2px black;
 }
-#boton, #botonClose{
+#boton, #botonClose, .GenBoton{
     background: #168106;
 }
 #botonCambio{
     background: #0a4c00;
 }
-#boton:active, #botonClose:active, #botonCambio:active{
+#boton:active, #botonClose:active, #botonCambio:active, .GenBoton:active{
     transform: translateY(3px) translateX(2px);
     box-shadow: 0px 0px black;
+}
+.GenBoton{
+    width: 20%;
+    height: 9%;
+    font-size: 1.5rem;
+    padding: 0;
 }
