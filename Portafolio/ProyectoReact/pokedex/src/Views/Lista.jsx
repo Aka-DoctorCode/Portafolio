@@ -140,27 +140,45 @@ const ListaPokeDex = () => {
 									clearData();
 									setTitle("");
 									async function detalles () {
-									setPokeId(element.id);
-									setPokeName(element.name);
-									setPokeType(element.types[0].type.name);
-									const pokeType2 = element.types.length > 1 ? element.types[1].type.name : null;
-									setPokeType2(pokeType2);
-									setPokeAbility(element.abilities[0].ability.name);
-									const pokeHiddenAbility = element.abilities.length > 1 ? element.abilities[1].ability.name : "None";
-									setPokeHiddenAbility(pokeHiddenAbility);
-									setPokeHeight(element.height);
-									setPokeWeight(element.weight);
-									setPokeSprite(element.sprites.other['official-artwork'].front_default);
+									// Basic info
+										setPokeId(element.id);
+										setPokeName(element.name);
+										setPokeType(element.types[0].type.name);
+										setPokeType2(element.types.length > 1 
+											? element.types[1].type.name 
+											: null);
+										setPokeHeight(element.height);
+										setPokeWeight(element.weight ? `${element.weight}` : "0");
 
-									setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny);
+										// setPokeAbility(element.abilities[0].ability.name);
+										// setPokeHiddenAbility(element.abilities.length > 1 
+										// 	? element.abilities[1].ability.name 
+										// 	: "None");
 
+										const hidden = element.abilities.map(ability => {
+											if (ability.ability['is_hidden'] === false)
+											return "";
+											else
+											return "is Hidden";
+										});
+										const abilities = element.abilities.map(ability => ability.ability.name);
+										setPokeHiddenAbility(abilities);
+										setPokeAbility(hidden)
 
-									setPokeHp(element.stats[0].base_stat);
-									setPokeAtk(element.stats[1].base_stat);
-									setPokeDef(element.stats[2].base_stat);
-									setPokeSpAtk(element.stats[3].base_stat);
-									setPokeSpDef(element.stats[4].base_stat);
-									setPokeSpeed(element.stats[5].base_stat);
+										// Images
+										setPokeSprite(element.sprites.other['official-artwork'].front_default 
+											? element.sprites.other['official-artwork'].front_default 
+											: pokeball);
+										setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny 
+											? element.sprites.other['official-artwork'].front_shiny 
+											: pokeball);
+										// STATS
+										setPokeHp(element.stats[0].base_stat);
+										setPokeAtk(element.stats[1].base_stat);
+										setPokeDef(element.stats[2].base_stat);
+										setPokeSpAtk(element.stats[3].base_stat);
+										setPokeSpDef(element.stats[4].base_stat);
+										setPokeSpeed(element.stats[5].base_stat);
 									} setTimeout(detalles, 10);
 								}}>
 								{/* texto de número y nombre */}
