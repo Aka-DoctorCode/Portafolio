@@ -139,6 +139,13 @@ const ListaPokeDex = () => {
 								onClick={() => {
 									clearData();
 									setTitle("");
+									// Images
+									setPokeSprite(element.sprites.other['official-artwork'].front_default 
+									? element.sprites.other['official-artwork'].front_default 
+									: pokeball);
+								setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny 
+									? element.sprites.other['official-artwork'].front_shiny 
+									: pokeball);
 									async function detalles () {
 									// Basic info
 										setPokeId(element.id);
@@ -152,26 +159,12 @@ const ListaPokeDex = () => {
 
 										// setPokeAbility(element.abilities[0].ability.name);
 										// setPokeHiddenAbility(element.abilities.length > 1 
-										// 	? element.abilities[1].ability.name 
-										// 	: "None");
-
-										const hidden = element.abilities.map(ability => {
-											if (ability.ability['is_hidden'] === false)
-											return "";
-											else
-											return "is Hidden";
-										});
-										const abilities = element.abilities.map(ability => ability.ability.name);
-										setPokeHiddenAbility(abilities);
-										setPokeAbility(hidden)
-
-										// Images
-										setPokeSprite(element.sprites.other['official-artwork'].front_default 
-											? element.sprites.other['official-artwork'].front_default 
-											: pokeball);
-										setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny 
-											? element.sprites.other['official-artwork'].front_shiny 
-											: pokeball);
+											// ? element.abilities[1].ability.name 
+											// : "None");
+										const ability = element.abilities.map(ability => ability.ability.name);
+										const isHidden = element.abilities.map(ability => ability.is_hidden);
+										setPokeAbility(ability);
+										setPokeHiddenAbility(isHidden);
 										// STATS
 										setPokeHp(element.stats[0].base_stat);
 										setPokeAtk(element.stats[1].base_stat);
@@ -179,7 +172,7 @@ const ListaPokeDex = () => {
 										setPokeSpAtk(element.stats[3].base_stat);
 										setPokeSpDef(element.stats[4].base_stat);
 										setPokeSpeed(element.stats[5].base_stat);
-									} setTimeout(detalles, 10);
+									} setTimeout(detalles, 100);
 								}}>
 								{/* texto de número y nombre */}
 								<p className="NombreYNumero" >

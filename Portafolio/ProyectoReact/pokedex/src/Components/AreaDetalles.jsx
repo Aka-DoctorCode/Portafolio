@@ -40,24 +40,33 @@ const AreaDetalles = (props) => {
                         <p className={props.type2}>{props.type2}</p>
                     </div>
                 </div>
+                <h3>characteristics</h3>
                 <div id="AreaIntermedia">
                     <div id="Col1">
                         <span>Height:</span>
                         <span>Weight:</span>
-                        {/* <span>Ability:</span> */}
-                        {/* <span>Hidden:</span> */}
                     </div>
                     <div id="Col2">
                         <span>{props.height}</span>
                         <span>{props.weight}</span>
-                        {/* <span>{props.ability}</span> */}
-                        {/* <span>{props.hiddenAbility}</span> */}
                     </div>
                 </div>
+                <h3>Abilities</h3>
+                <div id="AreaIntermedia">
+                        <div id="Col1">
+                            {props.ability.map((ability, index) => (
+                                <span key={index}>{ability}</span>
+                            ))}
+                        </div>
+                        <div id="Col2">
+                            {props.hiddenAbility.map((hiddenAbility, index) => (
+                                <span key={index}>
+                                    {hiddenAbility ? 'is hidden' : 'is not hidden'}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 <div id="Stats">
-                    <h3>ABILITIES</h3>
-                    <span>{props.hiddenAbility}</span>
-                    <span>{props.ability}</span>
                     <h3>Pokemon's Stats</h3>
                     <div className="StatsDiv">
                         <span>HP: {vida}/255</span>
