@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AreaDetalles from "../Components/AreaDetalles"
-import "../Style/TypeColor.css"
-import "../Style/Lista.css"
+// import "../Style/TypeColor.css"
+// import "../Style/Lista.css"
 import pokeball from "../Images/pokeball1.png"
 
 const ListaPokeDex = () => {

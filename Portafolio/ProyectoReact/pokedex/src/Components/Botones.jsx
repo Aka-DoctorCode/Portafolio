@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../Style/Botones.css"
+// import "../Style/Botones.css"
 const Botones = () => {
     // let Activo = ({isActive})=>({
     //     backgroudColor: isActive ? "blue" : "green",

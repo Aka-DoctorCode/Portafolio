@@ -9,6 +9,11 @@
     border-right: black 5px solid;
     margin-left: 0.3%;
 }
+@media only screen and (max-width: 600px) {
+    #Menu{
+        display: flex;
+    }
+    }
 #Menu{
     height: 100vh;
     background-color: #D42C3F;

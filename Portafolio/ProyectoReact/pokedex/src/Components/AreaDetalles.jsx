@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import '../Style/AreaDetalles.css'
+// import '../Style/AreaDetalles.css'
 
 const AreaDetalles = (props) => {
     const [Normal, setNormal] = useState(true);

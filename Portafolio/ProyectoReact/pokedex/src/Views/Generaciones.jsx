@@ -1,5 +1,5 @@
-import "../Style/Generaciones.css";
-import "../Style/Botones.css";
+// import "../Style/Generaciones.css";
+// import "../Style/Botones.css";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";

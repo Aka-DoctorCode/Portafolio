@@ -6,36 +6,12 @@
   height: 100vh;
   width: 100vw;
 }
-
 .Alo, .Alo2{
   position: absolute;
   z-index: 0;
   height: 60vh;
   rotate: -45deg;
   }
-  
-  @media only screen and (max-width: 600px) {
-  .Alo, .Alo2{
-    position: absolute;
-    z-index: 0;
-    height: 50%;
-    rotate: -45deg;
-  }
-
-  @media only screen and (min-width: 600px) {
-  .Alo, .Alo2{
-    position: absolute;
-    z-index: 0;
-    height: 80vh;
-    rotate: -45deg;
-  }
-  }
-  @media only screen and (min-width: 768px) {
-  .Alo, .Alo2{
-    height: 20vh;
-  }
-  }
-}
 .Alo2 {
   animation: rotate 9.8s cubic-bezier(1, 0.3, 0.5, 1);
 }
@@ -47,7 +23,6 @@
     transform: rotate(14400deg);
   }
 }
-
 .Centro, .Centro2 {
   position: relative;
   z-index: 1;
@@ -152,3 +127,19 @@
   color: black;
 }
 }
+@media only screen and (max-width: 600px) {
+.Alo, .Alo2{
+  position: absolute;
+  z-index: 0;
+  height: 45vh;
+  rotate: -45deg;
+}
+}
+@media only screen and (max-height: 768px) {
+  .Alo, .Alo2{
+    position: absolute;
+    z-index: 0;
+    height: 90vh;
+    rotate: -45deg;
+  }
+  }
