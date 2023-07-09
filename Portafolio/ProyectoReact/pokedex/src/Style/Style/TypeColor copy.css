@@ -1,0 +1,77 @@
+/* .fireSpriteSelector,
+.normalSpriteSelector,
+.waterSpriteSelector,
+.electricSpriteSelector,
+.grassSpriteSelector,
+.bugSpriteSelector,
+.flyingSpriteSelector,
+.fightingSpriteSelector,
+.iceSpriteSelector,
+.rockSpriteSelector,
+.groundSpriteSelector,
+.poisonSpriteSelector,
+.psychicSpriteSelector,
+.ghostSpriteSelector,
+.dragonSpriteSelector,
+.darkSpriteSelector,
+.steelSpriteSelector,
+.fairySpriteSelector, */
+
+
+/* .normal1{background-color: #a8a878;}
+.fire1{background-color: #F08030;}
+.water1{background-color: #6890F0;}
+.electric1{background-color: #F8D030;}
+.grass1{background-color: #78C850;}
+.bug1{background-color: #A8B820;}
+.flying1{background-color: #A890F0;}
+.fighting1{background-color: #C03028;}
+.ice1{background-color: #98D8D8;}
+.rock1{background-color: #B8A038;}
+.ground1{background-color: #E0C068;}
+.poison1{background-color: #A040A0;}
+.psychic1{background-color: #F85888;}
+.ghost1{background-color: #705898;}
+.dragon1{background-color: #7038F8;}
+.dark1{background-color: #705848;}
+.steel1{background-color: #B8B8D0;}
+.fairy1{background-color: #F0B6BC;}
+ */
+
+/* .fire1, .normal1, .water1, .electric1, .grass1, .bug1, .flying1, .fighting1, .ice1, .rock1, .ground1, .poison1, .psychic1, .ghost1, .dragon1, .dark1, .steel1, .fairy1{
+    width: 43%;
+    height: 91%;
+    margin-top: -115px;
+    margin-left: 49%;
+    z-index: 2;
+    border: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px black;
+} */
+
+/* #fire1, #normal1, #water1, #electric1, #grass1, #bug1, #flying1, #fighting1, #ice1, #rock1, #ground1, #poison1, #psychic1, #ghost1, #dragon1, #dark1, #steel1, #fairy1{
+    display: flex;
+    width: 43%;
+    margin-left: 49%;
+    justify-content: space-around;
+    margin: 5px;
+    border: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 1px 2px black;
+    color: white;
+    font-weight: 900;
+    font-size:large;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px black;
+} */

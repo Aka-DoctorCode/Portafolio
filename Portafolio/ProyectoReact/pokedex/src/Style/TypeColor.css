@@ -18,18 +18,14 @@
 .fairyBoton{background-color: #F0B6Bc;}
 
 .fireBoton, .normalBoton, .waterBoton, .electricBoton, .grassBoton, .bugBoton, .flyingBoton, .fightingBoton, .iceBoton, .rockBoton, .groundBoton, .poisonBoton, .psychicBoton, .ghostBoton, .dragonBoton, .darkBoton, .steelBoton, .fairyBoton{
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    width: 100%;
-    height: 130px;
-    border: black;
-    border-width: 3px;
-    border-style: solid;
+    align-items: center;
+    margin-bottom: 8px;
+    border: 3px solid rgb(20, 20, 20);
     border-radius: 20px;
-    box-shadow: 1px 2px black;
+    box-shadow: 1px 2px rgb(20, 20, 20);
     transition: 0.8s;
 }
 
@@ -51,24 +47,7 @@
 .darkBoton:hover{background-color: #513f33;}
 .steelBoton:hover{background-color: #9b9bad;}
 .fairyBoton:hover{background-color: #d59da2;}
-/* .fireSpriteSelector,
-.normalSpriteSelector,
-.waterSpriteSelector,
-.electricSpriteSelector,
-.grassSpriteSelector,
-.bugSpriteSelector,
-.flyingSpriteSelector,
-.fightingSpriteSelector,
-.iceSpriteSelector,
-.rockSpriteSelector,
-.groundSpriteSelector,
-.poisonSpriteSelector,
-.psychicSpriteSelector,
-.ghostSpriteSelector,
-.dragonSpriteSelector,
-.darkSpriteSelector,
-.steelSpriteSelector,
-.fairySpriteSelector, */
+
 .fireBoton:hover, .normalBoton:hover, .waterBoton:hover, .electricBoton:hover, .grassBoton:hover, .bugBoton:hover, .flyingBoton:hover, .fightingBoton:hover, .iceBoton:hover, .rockBoton:hover, .groundBoton:hover, .poisonBoton:hover, .psychicBoton:hover, .ghostBoton:hover, .dragonBoton:hover, .darkBoton:hover, .steelBoton:hover, .fairyBoton:hover{
     transform: scale(1.2);
     transition: 0.5s;
@@ -95,77 +74,12 @@
 .fairy{background-color: #F0B6BC;}
 
 .fire, .normal, .water, .electric, .grass, .bug, .flying, .fighting, .ice, .rock, .ground, .poison, .psychic, .ghost, .dragon, .dark, .steel, .fairy{
-    width: 115px;
-    margin: 4px;
-    padding: 5px;
-    border: 1px;
-    border-width: 2px;
-    border-style: solid;
+    width: 80px;
+    border: 2px solid rgb(20, 20, 20);
     border-radius: 10px;
-    border-color: black;
     box-shadow: 2px 4px black;
     color: white;
-    font-weight: 700;
-    font-size:large;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 2px 2px black;
 }
-
-/* .normal1{background-color: #a8a878;}
-.fire1{background-color: #F08030;}
-.water1{background-color: #6890F0;}
-.electric1{background-color: #F8D030;}
-.grass1{background-color: #78C850;}
-.bug1{background-color: #A8B820;}
-.flying1{background-color: #A890F0;}
-.fighting1{background-color: #C03028;}
-.ice1{background-color: #98D8D8;}
-.rock1{background-color: #B8A038;}
-.ground1{background-color: #E0C068;}
-.poison1{background-color: #A040A0;}
-.psychic1{background-color: #F85888;}
-.ghost1{background-color: #705898;}
-.dragon1{background-color: #7038F8;}
-.dark1{background-color: #705848;}
-.steel1{background-color: #B8B8D0;}
-.fairy1{background-color: #F0B6BC;}
- */
-
-/* .fire1, .normal1, .water1, .electric1, .grass1, .bug1, .flying1, .fighting1, .ice1, .rock1, .ground1, .poison1, .psychic1, .ghost1, .dragon1, .dark1, .steel1, .fairy1{
-    width: 43%;
-    height: 91%;
-    margin-top: -115px;
-    margin-left: 49%;
-    z-index: 2;
-    border: 1px;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
-    color: white;
-    font-weight: 900;
-    font-size:large;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 1px 1px black;
-} */
-
-/* #fire1, #normal1, #water1, #electric1, #grass1, #bug1, #flying1, #fighting1, #ice1, #rock1, #ground1, #poison1, #psychic1, #ghost1, #dragon1, #dark1, #steel1, #fairy1{
-    display: flex;
-    width: 43%;
-    margin-left: 49%;
-    justify-content: space-around;
-    margin: 5px;
-    border: black;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 20px;
-    box-shadow: 1px 2px black;
-    color: white;
-    font-weight: 900;
-    font-size:large;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 1px 1px black;
-} */

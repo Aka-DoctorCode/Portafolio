@@ -11,7 +11,17 @@
   z-index: 0;
   height: 60vh;
   rotate: -45deg;
+}
+@media only screen and (max-width: 600px) {
+  .Alo, .Alo2{
+    height: 55vh;
   }
+}
+@media only screen and (max-height: 600px) {
+  .Alo, .Alo2{
+    height: 95vh;
+  }
+}
 .Alo2 {
   animation: rotate 9.8s cubic-bezier(1, 0.3, 0.5, 1);
 }
@@ -127,19 +137,3 @@
   color: black;
 }
 }
-@media only screen and (max-width: 600px) {
-.Alo, .Alo2{
-  position: absolute;
-  z-index: 0;
-  height: 45vh;
-  rotate: -45deg;
-}
-}
-@media only screen and (max-height: 768px) {
-  .Alo, .Alo2{
-    position: absolute;
-    z-index: 0;
-    height: 90vh;
-    rotate: -45deg;
-  }
-  }

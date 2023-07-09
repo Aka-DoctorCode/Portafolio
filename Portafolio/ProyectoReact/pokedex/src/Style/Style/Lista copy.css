@@ -1,14 +1,3 @@
-#Principal{
-    display: grid;
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-    width: 90vw;
-    margin-left: 10vw;
-    background-color: #b13241e6;
-}
-#Lista{
-    grid-column: span 5;
-    margin-left: 20px;
-}
 #AreaDetalles{
     border-left: black 5px solid;
     margin-left: 8px;

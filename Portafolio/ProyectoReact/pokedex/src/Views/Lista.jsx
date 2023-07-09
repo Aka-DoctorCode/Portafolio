@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AreaDetalles from "../Components/AreaDetalles"
-// import "../Style/TypeColor.css"
-// import "../Style/Lista.css"
+import "../Style/TypeColor.css"
+import "../Style/Lista.css"
 import pokeball from "../Images/pokeball1.png"
 
 const ListaPokeDex = () => {
@@ -96,36 +96,34 @@ const ListaPokeDex = () => {
 		<main id="Body">
 			<section id="BotonesCambioPagina">
 				<button id="botonCambio"
-				onClick={() => {
-					switch (previus1) {
-						case null:
-							setUrl('https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=61');
-							break;
-						case "https://pokeapi.co/api/v2/pokemon/?offset=1151&limit=61":
-							setUrl("https://pokeapi.co/api/v2/pokemon/?offset=1111&limit=101");
-							break;
-						default: setUrl(previus1);
-					}
-				}}>
-					<p>PREVIOUS</p>
-				</button>
+					onClick={() => {
+						switch (previus1) {
+							case null:
+								setUrl('https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=61');
+								break;
+							case "https://pokeapi.co/api/v2/pokemon/?offset=1151&limit=61":
+								setUrl("https://pokeapi.co/api/v2/pokemon/?offset=1111&limit=101");
+								break;
+							default: setUrl(previus1);
+						}
+					}}
+				>PREVIOUS</button>
 				<button id="botonCambio"
-				onClick={() => { 
-					switch (next1) {
-						case null:
-							setUrl('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101');
-							break;
-						case "https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=69":
-							setUrl("https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=61");
-							break;
-						case "https://pokeapi.co/api/v2/pokemon/?offset=1273&limit=8":
-							setUrl("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101");
-							break;
-						default: setUrl(next1);
-					}
-				}}>
-					<p>NEXT</p>
-				</button>
+					onClick={() => { 
+						switch (next1) {
+							case null:
+								setUrl('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101');
+								break;
+							case "https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=69":
+								setUrl("https://pokeapi.co/api/v2/pokemon/?offset=1212&limit=61");
+								break;
+							case "https://pokeapi.co/api/v2/pokemon/?offset=1273&limit=8":
+								setUrl("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101");
+								break;
+							default: setUrl(next1);
+						}
+					}}
+				>NEXT</button>
 			</section>
 			{/* Delimitar el componente lista */}
 			<section id="Principal">
