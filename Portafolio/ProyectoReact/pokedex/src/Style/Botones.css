@@ -1,37 +1,50 @@
 #Menu, #BotonesCambioPagina{
     height: 35px;
     width: 100vw;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     background-color: #d42c3f;
 }
 #BotonesCambioPagina{
+    grid-template-columns: 1fr 1fr;
     margin-top: 35px;
     padding-bottom: 5px;
     border-bottom: rgb(20, 20, 20) 5px solid;
 }
-#boton, #botonClose, #botonCambio, .GenBoton{
-    width: 100px;
+.boton, .botonCambio, .GenBoton{
     height: 25px;
     margin: 0px;
     background: #168106;
     border: 2px solid rgb(20, 20, 20);
     border-radius: 8px;
-    box-shadow: 2px 4px black;
-    color: white;
+    box-shadow: 2px 4px rgb(20, 20, 20);
+    color: rgb(230,230,230);
     font-weight: 900;
+    text-decoration-line: none;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px rgb(20, 20, 20);
 }
-#botonCambio{
-    background: #0a4c00;
-    width: 200px;
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#boton:active, #botonClose:active, #botonCambio:active, .GenBoton:active{
+.active{
+    background: #88cc00;
+    color: rgb(20, 20, 20);
+    text-shadow: 2px 2px rgb(230, 230, 230);
     transform: translateY(3px) translateX(2px);
-    box-shadow: 0px 0px black;
+    box-shadow: 0px 0px;
+}
+.botonCambio{
+    background: #0a4c00;
+}
+.boton:active, .botonCambio:active, .GenBoton:active{
+    transform: translateY(3px) translateX(2px);
+    box-shadow: 0px 0px rgb(20, 20, 20);
 }

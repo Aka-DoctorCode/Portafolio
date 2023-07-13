@@ -26,7 +26,7 @@ const ListaPokeDex = () => {
 	const [pokeSpAtk, setPokeSpAtk] = useState("");
 	const [pokeSpDef, setPokeSpDef] = useState("");
 	const [pokeSpeed, setPokeSpeed] = useState("");
-	const [title, setTitle] = useState(<h1 id="Cargar">Click on any Pokemon to get more information</h1>);
+	const [title, setTitle] = useState(<span id="Cargar">Click on any Pokemon to get more information</span>);
 
 	async function clearData() {
 		setPokeId("");
@@ -45,7 +45,7 @@ const ListaPokeDex = () => {
 		setPokeSpAtk("");
 		setPokeSpDef("");
 		setPokeSpeed("");
-		setTitle(<h1 id="Cargar">Click on any Pokemon to get more information</h1>);
+		setTitle(<span id="Cargar">Click on any Pokemon to get more information</span>);
 	}
 
 	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=101`);
@@ -95,7 +95,7 @@ const ListaPokeDex = () => {
 	return (
 		<main id="Body">
 			<section id="BotonesCambioPagina">
-				<button id="botonCambio"
+				<button className="botonCambio"
 					onClick={() => {
 						switch (previus1) {
 							case null:
@@ -108,7 +108,7 @@ const ListaPokeDex = () => {
 						}
 					}}
 				>PREVIOUS</button>
-				<button id="botonCambio"
+				<button className="botonCambio"
 					onClick={() => { 
 						switch (next1) {
 							case null:
@@ -127,7 +127,34 @@ const ListaPokeDex = () => {
 			</section>
 			{/* Delimitar el componente lista */}
 			<section id="Principal">
-				<div id="Lista">
+				<section id="AreaDetalles">
+					<div id="detalles">
+						{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
+							<AreaDetalles
+								id={pokeId}
+								name={pokeName}
+								types={pokeType}
+								type2={pokeType2}
+								ability={pokeAbility}
+								hiddenAbility={pokeHiddenAbility}
+								height={(pokeHeight / 10) + " meters"}
+								weight={(pokeWeight / 10) + " kg"}
+								sprite={pokeSprite}
+								shinySprite={pokeShinySprite}
+								hp={pokeHp}
+								atk={pokeAtk}
+								def={pokeDef}
+								spAtk={pokeSpAtk}
+								spDef={pokeSpDef}
+								speed={pokeSpeed}
+								Title= {null}
+								clearData={clearData}
+							/>
+						) :	title
+						}
+					</div>
+				</section>
+				<section id="Lista">
 					{/* función de mapeo del grid */}
 					{nombres.map((element) => (
 						<div id={element.name} key={element.id}>
@@ -193,33 +220,6 @@ const ListaPokeDex = () => {
 						</div>
 					))
 					}
-				</div>
-				<section id="AreaDetalles">
-					<div id="detalles">
-						{pokeId && pokeName && pokeType && pokeAbility  && pokeHeight && pokeWeight && pokeSprite && pokeShinySprite && pokeHp && pokeAtk && pokeDef && pokeSpAtk && pokeSpDef && pokeSpeed ? (
-							<AreaDetalles
-								id={pokeId}
-								name={pokeName}
-								types={pokeType}
-								type2={pokeType2}
-								ability={pokeAbility}
-								hiddenAbility={pokeHiddenAbility}
-								height={(pokeHeight / 10) + " meters"}
-								weight={(pokeWeight / 10) + " kg"}
-								sprite={pokeSprite}
-								shinySprite={pokeShinySprite}
-								hp={pokeHp}
-								atk={pokeAtk}
-								def={pokeDef}
-								spAtk={pokeSpAtk}
-								spDef={pokeSpDef}
-								speed={pokeSpeed}
-								Title= {null}
-								clearData={clearData}
-							/>
-						) :	title
-						}
-					</div>
 				</section>
 			</section>
 		</main>
