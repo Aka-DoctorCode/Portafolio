@@ -149,3 +149,12 @@ h3{
         left: calc((var(--percent)*100%)/255);
     }
 }
+@media only screen and (min-width: 600px) {
+    .firedetalles, .normaldetalles, .waterdetalles, .electricdetalles, .grassdetalles, .bugdetalles, .flyingdetalles, .fightingdetalles, .icedetalles, .rockdetalles, .grounddetalles, .poisondetalles, .psychicdetalles, .ghostdetalles, .dragondetalles, .darkdetalles, .steeldetalles, .fairydetalles{
+        width: 100%;
+    }
+    .StatsDiv span{
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}

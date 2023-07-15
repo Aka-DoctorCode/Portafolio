@@ -144,3 +144,49 @@
         overflow: auto;
     }
 }
+@media only screen and (min-width: 600px) {
+    #Principal{
+        width: inherit;
+        height: 100vh;
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: inherit;
+        gap: 1px;
+        overflow: auto;
+    }
+    #Lista{
+        width: 45%;
+        margin-left: inherit;
+        margin-right:inherit;
+        padding-top: 75px;
+        z-index: inherit;
+        border: 5px solid rgb(20, 20, 20);  
+        overflow: auto;
+    }
+    #AreaDetalles{
+        height: -webkit-fill-available;
+        width: 55%;
+        margin-right: inherit;
+        position: inherit;
+        padding-top: 75px;
+        z-index: 1;
+        background-color: #b13241;
+        border: 5px solid rgb(20, 20, 20);
+        overflow: auto;
+    }
+    #detalles{
+        height: 100%;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 900px) {
+    #Principal{
+        margin-left: 100px;
+    }
+    #Lista, #AreaDetalles{
+        width: 50%;
+        height: 99vh;
+        padding: 0px;
+        margin: 0px;
+    }
+}

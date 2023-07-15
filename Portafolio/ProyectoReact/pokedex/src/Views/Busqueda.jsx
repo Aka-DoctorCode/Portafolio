@@ -1,12 +1,24 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+import "../Style/Busqueda.css"
 const Busqueda = () => {
+    const [pokemon, setPokemon] = useState ("pikachu");
+    async function datos() {
+        try {
+            const resultados = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+            return resultados.data;
+        } catch (error) {
+            console.error('Error fetching data for', pokemon, error);
+        }
+    }
+    useEffect(()=>{
+        datos()
+    })
     return ( 
         <main id="Busqueda">  
-            <h1 className="title">Serach for a Pokemon</h1>
-            <p>input pokemon's name or number</p>
-            <div>
-                <input type="Name or Number" />
-                <button>Buscar</button>
-            </div>
+            <h1>Searching Pokemon Tool</h1>
+            
         </main>
     );
 }
