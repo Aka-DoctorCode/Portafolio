@@ -50,7 +50,7 @@
 }
 @media only screen and (min-width: 900px) {
     #Menu, #BotonesCambioPagina{
-        width: 100px;
+        width: 120px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -69,6 +69,7 @@
     }
     .boton, .botonCambio{
         width: 90%;
+        font-size: 1rem;
     }
     .boton{
         height: 20%;

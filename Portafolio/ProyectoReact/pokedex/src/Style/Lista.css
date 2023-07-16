@@ -181,12 +181,80 @@
 }
 @media only screen and (min-width: 900px) {
     #Principal{
-        margin-left: 100px;
+        margin-left: 120px;
     }
     #Lista, #AreaDetalles{
         width: 50%;
         height: 99vh;
         padding: 0px;
         margin: 0px;
+    }
+    .NombreYNumero{
+        font-size: 1.5rem;
+    }
+    @keyframes walk {
+        0% {
+            transform: translateX(0px);
+        }
+        20%{
+            transform: translateX(-90%);
+        }
+        22% {
+            transform: scaleX(-1) translateX(90%);
+        }
+        40%{
+            transform: scaleX(-1) translateX(-90%);
+        }
+        42%{
+            transform:translateX(70%);
+        }
+        60%{
+            transform: translateX(0px)
+        }
+        65%{
+            transform: scalex(-1);
+        }
+        68%{
+            transform: scalex(1);
+        }
+        71%{
+            transform: scalex(-1);
+        }
+        73%{
+            transform: scalex(-1) translateX(-90%);
+        }
+        73%{
+            transform: scalex(-1) translateX(-90%) rotate(-120deg);
+        }
+        75%{
+            transform: scalex(-1) translateX(-90%) rotate(-120deg);
+        }
+        76%{
+            transform: scalex(-1) translateX(-90%) rotate(-120deg);
+        }
+        77%{
+            transform: scalex(-1) translateX(-90%) rotate(-60deg);
+        }
+        80%{
+            transform: scalex(-1) translateX(-90%);
+        }
+        80%{
+            transform: scalex(-1);
+        }
+        90%{
+            transform: scalex(-1);
+        }
+        92%{
+            transform: translateY(-15px)
+        }
+        94%{
+            transform: translateY(0px)
+        }
+        96%{
+            transform: translateY(-15px)
+        } 
+        100% {
+            transform: translateY(0px)
+        }
     }
 }
