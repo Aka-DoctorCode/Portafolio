@@ -14,6 +14,6 @@ for i in range(2):
     message = client.messages.create(
         from_='whatsapp:+14155238886',
         body="I used to rule the world, seas would rise when I gave the word...",
-        to='whatsapp:+56934887809'
+        to='whatsapp:+4143936561'
     )
     time.sleep(30)
