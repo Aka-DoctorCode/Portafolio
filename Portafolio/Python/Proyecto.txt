@@ -1,0 +1,15 @@
+Proyecto de Python - Grupo 8
+
+Fecha de Inicio: 16/Julio/2023
+Fecha de Entrega: 31/Julio/2023 
+El software debe permitir: 
+    - El profesor debe recibir un mensaje al Whatsapp luego de cada registro con el siguiente formato:
+       "Se registro el usuario: {nombre} {apellido}, de {edad} años de edad, residenciado en {pais} y titular del correo: {email} / Software de {NombreDeAlumno}"
+    
+2 - Visualizar usuarios:
+    - Se deben poder ver todos los usuarios registrados.
+
+Extras:
+    - El usuario debe recibir un correo electronico de bienvenida luego de registrarse.
+    - Si deseas darle una GUI (Interfaz grafia de usuario) a tu proyecto, usa TKINTER. (Documentacion: https://docs.python.org/es/3/library/tkinter.html)
+	
