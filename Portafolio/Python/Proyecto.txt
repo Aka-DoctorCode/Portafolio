@@ -5,9 +5,10 @@ Fecha de Entrega: 31/Julio/2023
 El software debe permitir: 
     - El profesor debe recibir un mensaje al Whatsapp luego de cada registro con el siguiente formato:
        "Se registro el usuario: {nombre} {apellido}, de {edad} años de edad, residenciado en {pais} y titular del correo: {email} / Software de {NombreDeAlumno}"
-    
-2 - Visualizar usuarios:
-    - Se deben poder ver todos los usuarios registrados.
+
+SI LA OPCION ESCRITA ES INVALIDA DEBE PEDIRSE QUE SE ESCRIBA DE NUEVO AGREGANDO EL CONTENIDO NUEVO SIN MODIFICAR LO QUE YA ESTA ESCRITO ANTERIORMENTE EN EL DOCUMENTO
+MODIFICAR NOMBRE DEL ARCHIVO AL CAMBIAR CORREO Y POR ENDE MODIFICAR LA BASE DE DATOS PARA CORREGIR EL CORREO
+SINO SE MODIFICA ALGUN PUNTO DEJARLO IGUAL
 
 Extras:
     - El usuario debe recibir un correo electronico de bienvenida luego de registrarse.

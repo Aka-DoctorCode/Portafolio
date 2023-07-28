@@ -1,7 +1,0 @@
-Email: diego@mail.com
-Nombre: Diego
-Apellido: Rodriguez
-Edad: 28
-País: Chile
-Género: M
-Teléfono: +56934887809

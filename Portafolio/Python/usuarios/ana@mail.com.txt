@@ -1,7 +1,0 @@
-Email: ana@mail.com
-Nombre: Ana
-Apellido: Gonzalez
-Edad: 45
-País: Argentina
-Género: F
-Teléfono: +5493404504054

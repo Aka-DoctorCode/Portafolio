@@ -1,0 +1,7 @@
+Email: fran@mail.com
+Nombre: Qwe
+Apellido: Qwe
+Edad: 12
+País: qwer
+Género: m
+Teléfono: +584143936561
