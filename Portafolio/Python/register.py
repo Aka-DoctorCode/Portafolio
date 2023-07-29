@@ -16,44 +16,40 @@ class CRUD:
         pais = ""
         genero = ""
         telefono = ""
-        # Metodo para validar el correo
+        nombre_archivo = ""
+        
+        # Metodo para validar el correo y so existe en la base de datos
         def validar_correo():
+            correo = input("Ingrese el correo electrónico: ").lower()
+            validar_correo = (r"[^@]+@[^@]+\.[^@]+")
             correoValido = False
             while(correoValido == False):
-                validar_correo = (r"[^@]+@[^@]+\.[^@]+")
-                correo = input("Ingrese el Email del usuario a registrar para continuar: ").lower()
                 if (re.match(validar_correo, correo)):
                     correoValido = True
-                    print("Correo valido")
+                    print("Formato del correo valido")
+                    time.sleep(2)
                 else:
-                    print("Formato del correo invalido (xxx@xxx.x) ")
                     correoValido = False
-        # Creación de archivo
-        nombre_archivo = ("./usuarios/" + correo + ".txt")
-        # Loops para validar si existe el correo
-        archivoExiste = True
-        while (archivoExiste == True):
+                    print("Formato del correo invalido (xxx@xxx.x)")
+                    system("clear")
+                    time.sleep(2)
+                    correo = input("Ingrese el correo electrónico nuevamente: ").lower()
+            print("Verificando si el correo existe en la base de datos ...")
+            time.sleep(2) 
+            # Creación de archivo
+            nombre_archivo = ("./usuarios/" + correo + ".txt")
             if os.path.exists(nombre_archivo):
                 print("El correo ya existe")
-                archivoExiste = True
-            else:
-                archivoExiste = False
-                validar_correo()
-
-        # correoValido = False
-        # while(correoValido == False):
-        #     correo = input("Email: ").lower()
-        #     validar_correo = (r"[^@]+@[^@]+\.[^@]+")
-        #     if (re.match(validar_correo, correo)):
-        #         print("Correo valido")
-        #         correoValido = True
-        #     else:
-        #         print("Formato del correo invalido (xxx@xxx.x) ")
-        #         correoValido = False
-        #         time.sleep(3)
-        #         system("clear")
-
-        # Validaciones
+                time.sleep(2)
+                system("clear")
+                correo = input("Ingrese un correo electrónico diferente: ").lower()
+                print("Verificando si el correo existe en la base de datos ...")
+                time.sleep(2) 
+                print("El correo no existe en la base de datos")
+        validar_correo()
+        time.sleep(2)
+        
+        # Validaciones otros datos
         nombreValido = False
         while(nombreValido == False):
             nombre = input("Nombre: ").capitalize()
@@ -64,7 +60,7 @@ class CRUD:
             else:
                 print("Solo use letras en el nombre")
                 nombreValido = False
-                time.sleep(3)
+                time.sleep(2)
                 system("clear")
         apellidoValido = False
         while(apellidoValido == False):
@@ -76,7 +72,7 @@ class CRUD:
             else:
                 print("Solo use letras en el apellido")
                 apellidoValido = False
-                time.sleep(3)
+                time.sleep(2)
                 system("clear")
         edadValido = False
         while(edadValido == False):
@@ -88,7 +84,7 @@ class CRUD:
             else:
                 print("Solo use números para la edad, edades mayores a 100 coloque 99")
                 edadValido = False
-                time.sleep(3)
+                time.sleep(2)
                 system("clear")
         paisValido = False
         while(paisValido == False):
@@ -100,7 +96,7 @@ class CRUD:
             else:
                 print("El pais no es valido")
                 paisValido = False
-                time.sleep(3)
+                time.sleep(2)
                 system("clear")
         generoValido = False
         while(generoValido == False):
@@ -112,7 +108,7 @@ class CRUD:
             else:
                 print("Escriba M para masculino y F para femenino")
                 generoValido = False
-                time.sleep(3)
+                time.sleep(2)
                 system("clear")
         telefonoValido = False
         while(telefonoValido == False):
@@ -124,18 +120,19 @@ class CRUD:
             else:
                 print("El teléfono no es valido")
                 telefonoValido = False
-                time.sleep(3)
+                time.sleep(2)
                 system("clear")
+
         # función creadora de archivo en modo X
-        # archivo = open(nombre_archivo, "x")
-        # archivo.write(f'Email: {correo}\n')
-        # archivo.write(f'Nombre: {nombre}\n')
-        # archivo.write(f'Apellido: {apellido}\n')
-        # archivo.write(f'Edad: {edad}\n')
-        # archivo.write(f'País: {pais}\n')
-        # archivo.write(f'Género: {genero}\n')
-        # archivo.write(f'Teléfono: {telefono}\n')
-        # archivo.close()
+        archivo = open(nombre_archivo, "x")
+        archivo.write(f'Email: {correo}\n')
+        archivo.write(f'Nombre: {nombre}\n')
+        archivo.write(f'Apellido: {apellido}\n')
+        archivo.write(f'Edad: {edad}\n')
+        archivo.write(f'País: {pais}\n')
+        archivo.write(f'Género: {genero}\n')
+        archivo.write(f'Teléfono: {telefono}\n')
+        archivo.close()
 
         # función para escribir la base de datos de usuarios
         archivo = open("./usuarios/usuarios.txt", "a")
@@ -182,32 +179,32 @@ class CRUD:
             print("Nuevo Correo valido")
         else:
             print("Formato del correo invalido (xxx@xxx.x) ")
-        time.sleep(1)
+        time.sleep(2)
         if (re.match(validar_nombre, nombre)):
             print("Nuevo Nombre valido")
         else:
             print("Solo use letras en el nombre")
-        time.sleep(1)
+        time.sleep(2)
         if (re.match(validar_apellido, apellido)):
             print("Nuevo Apellido valido")
         else:
             print("Solo use letras en el apellido")
-        time.sleep(1)
+        time.sleep(2)
         if (re.match(validar_edad, edad)):
             print("Nuevo Edad valido")
         else:
             print("Solo use números para la edad")
-        time.sleep(1)
+        time.sleep(2)
         if (re.match(validar_pais, pais)):
             print("Nuevo Pais valido")
         else:
             print("El pais no puede contener numeros")
-        time.sleep(1)
+        time.sleep(2)
         if (re.match(validar_genero, genero)):
             print("Nuevo Género valido")
         else:
             print("Escriba M para masculino y F para femenino")
-        time.sleep(1)
+        time.sleep(2)
         if (re.match(validar_telefono, telefono)):
             print("Nuevo Telefono valido")
         else:
