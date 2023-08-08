@@ -1,6 +1,2 @@
-MODIFICAR NOMBRE DEL ARCHIVO AL CAMBIAR CORREO Y POR ENDE MODIFICAR LA BASE DE DATOS PARA CORREGIR EL CORREO
-
-Extras:
-    - El usuario debe recibir un correo electronico de bienvenida luego de registrarse.
-    - Si deseas darle una GUI (Interfaz grafia de usuario) a tu proyecto, usa TKINTER. (Documentacion: https://docs.python.org/es/3/library/tkinter.html)
+- Si deseas darle una GUI (Interfaz grafia de usuario) a tu proyecto, usa TKINTER. (Documentacion: https://docs.python.org/es/3/library/tkinter.html)
 	

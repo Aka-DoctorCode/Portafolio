@@ -16,7 +16,8 @@ class CRUD:
     # Constructor de la clase
     def __init__(self):
         pass
-    # función para validar los datos ingresados 
+
+    # Metodo para registrar usuario
     def registrar_usuario(self):
         correo = ""
         nombre_archivo = ("./usuarios/" + correo + ".txt")
@@ -27,41 +28,29 @@ class CRUD:
         genero = ""
         telefono = ""
         
-        # Metodo para validar el correo y so existe en la base de datos
-        def verificar_correo():
+        # Validar el correo y si existe en la base de datos
+        correoValido = False
+        while(correoValido == False):
             correo = input("Ingrese el correo electrónico: ").lower()
             validar_correo = (r"[^@]+@[^@]+\.[^@]+")
-            correoValido = False
-            while(correoValido == False):
-                if (re.match(validar_correo, correo)):
-                    correoValido = True
-                    print("Correo valido")
-                    time.sleep(1.5)
-                else:
-                    system("clear")
-                    correoValido = False
-                    print("Formato del correo invalido (xxx@xxx.x)")
-                    time.sleep(1.5)
-            print("Verificando si el correo existe en la base de datos ...")
-            time.sleep(1.5) 
             # Creación de archivo
             nombre_archivo = ("./usuarios/" + correo + ".txt")
-
-            # comvertir em loop
-
-            # if os.path.exists(nombre_archivo):
-            #     print("El correo ya existe")
-            #     time.sleep(1.5)
-            #     system("clear")
-            #     correo = input("Ingrese un correo electrónico diferente: ").lower()
-            #     print("Verificando si el correo existe en la base de datos ...")
-            #     time.sleep(1.5) 
-            #     print("El correo no existe en la base de datos")
-            # necesario ?
-            return correo, nombre_archivo
-        # necesario ?
-        correo, nombre_archivo = verificar_correo()
-        time.sleep(1.5)
+            if (re.match(validar_correo, correo) and os.path.exists(nombre_archivo)):
+                correoValido = False
+                print("El correo ya existe")
+                time.sleep(1.5)
+                system("clear")
+            elif (re.match(validar_correo, correo)):
+                correoValido = True
+                print("Correo valido")
+                time.sleep(1.5)
+            else:
+                system("clear")
+                correoValido = False
+                print("Formato del correo invalido (xxx@xxx.x)")
+                time.sleep(1.5)
+        print("Verificando si el correo existe en la base de datos ...")
+        time.sleep(1.5) 
         
         # Validar los otros datos
         nombreValido = False
@@ -165,7 +154,7 @@ class CRUD:
         mensaje['To'] = correo
         mensaje['Subject'] = asunto
         destinatario = [correo, "frankmolcas@gmail.com"]
-        cuerpo = cuerpo = f"Correo enviado desde mi Computadora en una aplicacion realizada con Python\n Usuario registrado correctamente\nCorreo Electronico: {correo}\nNombre: {nombre}\nApellido: {apellido}\nEdad: {edad} años\nPaís: {pais}\nGénero: {genero}\nTelefono: {telefono}"
+        cuerpo = cuerpo =  f"¡Bienvenido!\n Gracias por resgistrarte en mi app de registros usando Python\n Usuario registrado correctamente\nCorreo Electronico: {correo}\nNombre: {nombre}\nApellido: {apellido}\nEdad: {edad} años\nPaís: {pais}\nGénero: {genero}\nTelefono: {telefono}"
         mensaje.attach(MIMEText(cuerpo, 'plain'))
         # Iniciar sesión en el servidor SMTP de Gmail
         servidor_smtp = smtplib.SMTP('smtp.gmail.com', 587)
@@ -180,6 +169,7 @@ class CRUD:
         time.sleep(1.5)
         system("clear")
 
+    # Función para mostrar el usuario
     def mostrar_usuario(self):
         opcion = ""
         # Loop de submenu ver usuarios
@@ -225,8 +215,8 @@ class CRUD:
                 print("Opción inválida")
                 time.sleep(1.5)
                 system("clear")
-        
 
+    # Metodo para editar usuario
     def editar_usuario(self):
         correo = ""
         Selecionar_usuario =""
@@ -292,7 +282,6 @@ class CRUD:
                 print("Formato del correo invalido (xxx@xxx.x)")
                 time.sleep(1.5)
 
-
         # Cambio de nombre del archivo
         if (Selecionar_usuario != correo):
             os.rename(f"./usuarios/{Selecionar_usuario}.txt", f"./usuarios/{correo}.txt")
@@ -354,7 +343,7 @@ class CRUD:
                 edad = Nueva_edad
                 verificarEdad = True
                 time.sleep(1.5)
-                print(f"La edad se cambiera a: {Nueva_edad}")
+                print(f"La edad se cambiara a: {Nueva_edad}")
                 time.sleep(1.5)
             elif (Nueva_edad == ""):
                 split = lista[3].split(": ")
@@ -368,102 +357,134 @@ class CRUD:
                 print("Solo use numeros en la edad, si la edad es mayor a 100 escriba 99")
                 time.sleep(1.5)
         
+        verificarPais = False
+        while (verificarPais == False):
+            Nuevo_pais = input("Nuevo pais: ")
+            validar_pais = (r"^[a-záéíóúñüA-ZÁÉÍÓÚÑÜ]+(?:[\s-][a-záéíóúñüA-ZÁÉÍÓÚÑÜ]+)*$")
+            if (re.match(validar_pais, Nuevo_pais)):
+                print("Nuevo Pais Valido")
+                pais = Nuevo_pais
+                verificarPais = True
+                time.sleep(1.5)
+                print(f"El pais se cambiara a: {Nuevo_pais}")
+                time.sleep(1.5)
+            elif (Nuevo_pais == ""):
+                split = lista[4].split(": ")
+                pais = split[1]
+                verificarPais = True
+                print(f"El pais se mantendra como: {pais}")
+                time.sleep(1.5)
+            else:
+                system("clear")
+                verificarPais = False
+                print("Solo use letras en el pais")
+                time.sleep(1.5)
         
+        verificarGenero = False
+        while (verificarGenero == False):
+            Nuevo_genero = input("Nuevo genero: ")
+            validar_genero = (r"^[mfMF]$")
+            if (re.match(validar_genero, Nuevo_genero)):
+                print("Nuevo Genero Valido")
+                genero = Nuevo_genero
+                verificarGenero = True
+                time.sleep(1.5)
+                print(f"El genero se cambiara a: {Nuevo_genero}")
+                time.sleep(1.5)
+            elif (Nuevo_genero == ""):
+                split = lista[5].split(": ")
+                genero = split[1]
+                verificarGenero = True
+                print(f"El genero se mantendra como: {genero}")
+                time.sleep(1.5)
+            else:
+                system("clear")
+                verificarGenero = False
+                print("Solo use letras en el genero")
+                time.sleep(1.5)
+        
+        verificarTelefono = False
+        while (verificarTelefono == False):
+            Nuevo_telefono = input("Nuevo telefono: ")
+            validar_telefono = (r"^\+\d{10,14}$")
+            if (re.match(validar_telefono, Nuevo_telefono)):
+                print("Nuevo Telefono Valido")
+                telefono = Nuevo_telefono
+                verificarTelefono = True
+                time.sleep(1.5)
+                print(f"El telefono se cambiara a: {Nuevo_telefono}")
+                time.sleep(1.5)
+            elif (Nuevo_telefono == ""):
+                split = lista[6].split(": ")
+                telefono = split[1]
+                verificarTelefono = True
+                print(f"El telefono se mantendra como: {telefono}")
+                time.sleep(1.5)
+            else:
+                system("clear")
+                verificarTelefono = False
+                print("Formato del telefono invalido (xxx@xxx.x)")
+                time.sleep(1.5)
 
-        # paisValido = False
-        # while(paisValido == False):
-        #     pais = input("País: ")
-        #     validar_pais = (r"^[a-záéíóúñüA-ZÁÉÍÓÚÑÜ]+(?:[\s-][a-záéíóúñüA-ZÁÉÍÓÚÑÜ]+)*$")
-        #     if (re.match(validar_pais, pais)):
-        #         print("Pais valido")
-        #         paisValido = True
-        #         time.sleep(1.5)
-        #     else:
-        #         system("clear")
-        #         paisValido = False
-        #         print("El pais no es valido")
-        #         time.sleep(1.5)
-        # generoValido = False
-        # while(generoValido == False):
-        #     genero = input("Género (M o F): ")
-        #     validar_genero = (r"^[mfMF]$")
-        #     if (re.match(validar_genero, genero)):
-        #         print("Género valido")
-        #         generoValido = True
-        #         time.sleep(1.5)
-        #     else:
-        #         system("clear")
-        #         generoValido = False
-        #         print("Escriba M para masculino y F para femenino")
-        #         time.sleep(1.5)
-        # telefonoValido = False
-        # while(telefonoValido == False):
-        #     telefono = input("Teléfono: ")
-        #     validar_telefono = (r"^\+\d{10,14}$")
-        #     if (re.match(validar_telefono, telefono)):
-        #         print("Teléfono valido")
-        #         telefonoValido = True
-        #         time.sleep(1.5)
-        #     else:
-        #         system("clear")
-        #         telefonoValido = False
-        #         print("El teléfono no es valido")
-        #         time.sleep(1.5)
+        # #función modificadora de archivo en modo w
+        archivo = open(f"./usuarios/{correo}.txt", "w")
+        archivo.write(f'Email: {correo}\n')
+        archivo.write(f'Nombre: {nombre}\n')
+        archivo.write(f'Apellido: {apellido}\n')
+        archivo.write(f'Edad: {edad}\n')
+        archivo.write(f'País: {pais}\n')
+        archivo.write(f'Género: {genero}\n')
+        archivo.write(f'Teléfono: {telefono}\n')
+        archivo.close()
 
-        # #función creadora de archivo en modo w
-        # archivo = open(f"./usuarios/{correo}.txt", "w")
-        # archivo.write(f'{correo}\n')
-        # archivo.write(f'{nombre}\n')
-        # archivo.write(f'{apellido}\n')
-        # archivo.write(f'{edad}\n')
-        # archivo.write(f'{pais}\n')
-        # archivo.write(f'{genero}\n')
-        # archivo.write(f'{telefono}\n')
-        # archivo.close()
+        split = lista[0].split(": ")
+
         # # Función para cambiar el correo electrónico en usuario.txt
-        # with open("./usuarios/usuarios.txt", "r") as usuarios:
-        #     contenido = usuarios.readlines()
-        # for i, linea in enumerate(contenido):
-        #     if lista[0] in linea:
-        #         contenido[i] = f"Email: {Nuevo_correo} ({contenido[0]})\n"
-        # with open("./usuarios/usuarios.txt", "w") as usuarios:
-        #     usuarios.writelines(contenido)
-        # print("Correo electrónico modificado y guardado en la base de datos")
-        # time.sleep(1.5)
-        # system("clear")
+        with open("./usuarios/usuarios.txt", "r") as usuarios:
+            contenido = usuarios.readlines()
+        for i, linea in enumerate(contenido):
+            if lista[0] in linea:
+                contenido[i] = f"Email: {Nuevo_correo} / {split[1]} \n"
+        with open("./usuarios/usuarios.txt", "w") as usuarios:
+            usuarios.writelines(contenido)
+        print("Correo electrónico modificado y guardado en la base de datos")
+        time.sleep(1.5)
+        system("clear")
 
-        # # Correo de confirmación
-        # mensaje = MIMEMultipart()
-        # mensaje['From'] = mi_correo
-        # mensaje['To'] = correo
-        # mensaje['Subject'] = asuntoModificado
-        # destinatario = [correo, "frankmolcas@gmail.com"]
-        # cuerpo = cuerpo = f"Correo enviado desde mi Computadora en una aplicacion realizada con Python\n Usuario {Selecionar_usuario} modificado correctamente\nCorreo Electronico: {correo}\nNombre: {nombre}\nApellido: {apellido}\nEdad: {edad} años\nPaís: {pais}\nGénero: {genero}\nTelefono: {telefono}"
-        # mensaje.attach(MIMEText(cuerpo, 'plain'))
-        # # Iniciar sesión en el servidor SMTP de Gmail
-        # servidor_smtp = smtplib.SMTP('smtp.gmail.com', 587)
-        # servidor_smtp.starttls()
-        # servidor_smtp.login(mi_correo, mi_contraseña)
-        # # Enviar correo electrónico
-        # texto = mensaje.as_string()
-        # servidor_smtp.sendmail(mi_correo, destinatario, texto)
-        # # Cerrar sesión en el servidor SMTP
-        # servidor_smtp.quit()
-        # print("Correos electrónicos enviados con éxito.")
-        # time.sleep(1.5)
-        # opcion = ""
-        # while opcion != "1":
-        #     opcion = input("Presione '1' para volver al menu inicial\n")
-        #     if opcion == "1":
-        #         print("Cerrando Base de Datos")
-        #         time.sleep(1.5)
-        #         system("clear")
-        #     else:
-        #         print("Opción inválida")
-        #         time.sleep(1.5)
-        #         system("clear")
+        # Correo de confirmación
+        mensaje = MIMEMultipart()
+        mensaje['From'] = mi_correo
+        mensaje['To'] = correo
+        mensaje['Subject'] = asuntoModificado
+        destinatario = [correo, "frankmolcas@gmail.com"]
+        cuerpo = cuerpo = f"Usuario modificado '{lista[0]}' correctamente\nCorreo Electronico: {correo}\nNombre: {nombre}\nApellido: {apellido}\nEdad: {edad} años\nPaís: {pais}\nGénero: {genero}\nTelefono: {telefono}"
+        mensaje.attach(MIMEText(cuerpo, 'plain'))
+        # Iniciar sesión en el servidor SMTP de Gmail
+        servidor_smtp = smtplib.SMTP('smtp.gmail.com', 587)
+        servidor_smtp.starttls()
+        servidor_smtp.login(mi_correo, mi_contraseña)
+        # Enviar correo electrónico
+        texto = mensaje.as_string()
+        servidor_smtp.sendmail(mi_correo, destinatario, texto)
+        # Cerrar sesión en el servidor SMTP
+        servidor_smtp.quit()
+        print("Correos electrónicos enviados con éxito.")
+        time.sleep(1.5)
+        system("clear")
+        
+        opcion = ""
+        while opcion != "1":
+            opcion = input("Presione '1' para volver al menu inicial\n")
+            if opcion == "1":
+                print("Cerrando Base de Datos")
+                time.sleep(1.5)
+                system("clear")
+            else:
+                print("Opción inválida")
+                time.sleep(1.5)
+                system("clear")
 
-    # Función para eliminar un usuario
+    # Metodo para eliminar un usuario
     def eliminar_usuario(self):
         Usuario_a_elimnar = input("Ingrese el correo electrónico del usuario que desea eliminar: ").lower()
         os.remove(f"./usuarios/{Usuario_a_elimnar}.txt")
@@ -487,7 +508,7 @@ class CRUD:
                 print("Opción inválida")
                 time.sleep(1.5)
                 system("clear")
-            
+
     # Función lectura base de datos
     def ver_basededatos(self):
         archivo = open("./usuarios/usuarios.txt", "r")
