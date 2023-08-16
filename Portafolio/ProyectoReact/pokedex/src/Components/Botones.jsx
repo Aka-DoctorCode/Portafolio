@@ -9,6 +9,6 @@ const Botones = () => {
             <NavLink className="boton" to="/">CLOSE</NavLink>
         </header>
     );
-}
+};
 
 export default Botones;

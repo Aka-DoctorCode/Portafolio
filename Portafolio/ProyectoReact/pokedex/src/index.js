@@ -13,11 +13,11 @@ import Generaciones from './Views/Generaciones';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function AppWithBotones() {
-  const botones = useLocation();
+  const location = useLocation();
 
   return (
     <>
-      {botones.pathname !== '/' && <Botones />}
+      {location.pathname !== '/' && <Botones />}
       <Routes>
         <Route path='/' element={<App/>} />
         <Route path='/Lista' element={<Lista/>} />

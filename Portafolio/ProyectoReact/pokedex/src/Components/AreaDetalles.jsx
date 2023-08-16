@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import '../Style/AreaDetalles.css'
 
 const AreaDetalles = (props) => {
     const [Normal, setNormal] = useState(true);
     const [botonPress, setBotonPress] = useState('press');
     const [shinyPress, setShinyPress] = useState('');
-    const [vida, setVida] = useState(props.hp);
         const hadleClickNormal = () => {
         setNormal(true);
         setBotonPress('press');
@@ -67,8 +66,8 @@ const AreaDetalles = (props) => {
             <div id="Stats">
                 <h3>Pokemon's Stats</h3>
                 <div className="StatsDiv">
-                    <span>HP: {vida}/255</span>
-                    <div className="Statsbar" style={{ "--percent": vida}}></div>
+                    <span>HP: {props.hp}/255</span>
+                    <div className="Statsbar" style={{ "--percent":props.hp}}></div>
                 </div>
                 <div className="StatsDiv">
                     <span>ATK: {props.atk}/255</span>

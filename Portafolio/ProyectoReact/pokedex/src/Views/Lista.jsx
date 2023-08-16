@@ -166,11 +166,11 @@ const ListaPokeDex = () => {
 									setTitle("");
 									// Images
 									setPokeSprite(element.sprites.other['official-artwork'].front_default 
-									? element.sprites.other['official-artwork'].front_default 
-									: pokeball);
-								setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny 
-									? element.sprites.other['official-artwork'].front_shiny 
-									: pokeball);
+										? element.sprites.other['official-artwork'].front_default 
+										: pokeball);
+									setPokeShinySprite(element.sprites.other['official-artwork'].front_shiny 
+										? element.sprites.other['official-artwork'].front_shiny 
+										: pokeball);
 									async function detalles () {
 									// Basic info
 										setPokeId(element.id);
@@ -181,11 +181,7 @@ const ListaPokeDex = () => {
 											: null);
 										setPokeHeight(element.height);
 										setPokeWeight(element.weight ? `${element.weight}` : "0");
-
-										// setPokeAbility(element.abilities[0].ability.name);
-										// setPokeHiddenAbility(element.abilities.length > 1 
-											// ? element.abilities[1].ability.name 
-											// : "None");
+										// ABILITIES
 										const ability = element.abilities.map(ability => ability.ability.name);
 										const isHidden = element.abilities.map(ability => ability.is_hidden);
 										setPokeAbility(ability);
