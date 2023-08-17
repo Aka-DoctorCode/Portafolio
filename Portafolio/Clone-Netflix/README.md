@@ -1,2 +1,0 @@
-# Clone-Netflix
- Segundo Proyecto

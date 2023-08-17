@@ -1,2 +1,0 @@
-- Si deseas darle una GUI (Interfaz grafia de usuario) a tu proyecto, usa TKINTER. (Documentacion: https://docs.python.org/es/3/library/tkinter.html)
-	
